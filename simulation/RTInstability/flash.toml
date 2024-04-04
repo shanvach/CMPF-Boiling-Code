@@ -1,24 +1,24 @@
 # Input file to set runtime parameters
 
 [Logfile]
-  run_comment = "Cross Flow problem"
-  log_file = "INS_Cross_Flow.log"
+  run_comment = "RT Instability"
+  log_file = "INS_RT_Instability.log"
 
 [Grid]
   geometry = "cartesian"
-  xmin = -10.0
-  xmax = 30.0
+  xmin = 0.0
+  xmax = 1.0
   ymin = 0.0
-  ymax = 20.0
-  xl_boundary_type = "inflow_ins"
-  xr_boundary_type = "outflow_ins"
-  yl_boundary_type = "inflow_ins"
-  yr_boundary_type = "slip_ins"
+  ymax = 4.0
+  xl_boundary_type = "slip_ins"
+  xr_boundary_type = "slip_ins"
+  yl_boundary_type = "noslip_ins"
+  yr_boundary_type = "noslip_ins"
   gr_amrexMG_composite_solve = true
-  gr_amrexMG_Tol = 1.0e-12
+  gr_amrexMG_Tol = 1.0e-13
   gr_amrexMG_max_iter = 200
-  nblockx = 20
-  nblocky = 10
+  nblockx = 2
+  nblocky = 8
   nrefs = 10000000
   lrefine_min = 1
   lrefine_max = 1
@@ -26,19 +26,15 @@
   enableMaskedGCFill = true
 
 [IncompNS]
-  ins_invReynolds = 0.0001
-  ins_inflowVelScale = 2.0
-  ins_gravY = -0.01
-  ins_cflFlg = 1
-  ins_cfl = 0.005
-  ins_sigma = 0.005
-  ins_dtSpec = 0.1e-4
+  ins_invReynolds = 0.0285
+  ins_gravY = -1.0
+  ins_cflFlg = 0
+  ins_cfl = 0.3
+  ins_sigma = 0.2
+  ins_dtSpec = 1.25e-5
   ins_pressureCorrect = false
   ins_intSchm = 2
   ins_advSchm = 2
-
-[Outlet]
-  out_buffer = 1.0
 
 [Simulation]
   sim_lengthScaleMeters = 1.0
@@ -46,22 +42,25 @@
 
 [Multiphase]
   mph_rhoGas = 0.001
-  mph_muGas = 0.02
+  mph_muGas = 0.01
   mph_iPropSmear = 1.5
-  mph_invWeber = 0.004
+  mph_invWeber = 0.001
 
 [Driver]
   restart = false
   nend = 1200000
   tmax = 80
-  dtinit = 0.1e-4
-  tstep_change_factor = 1.01
-  wall_clock_time_limit = 7000
+  dtinit = 1.25e-5
+  dtmax = 1.25e-5
+  tstep_change_factor = 1.0
+  wall_clock_time_limit = -1
 
 [IO]
-  basenm = "INS_Cross_Flow_"
-  checkpointFileIntervalTime = 5.0
-  plotFileIntervalTime = 1.0
+  basenm = "INS_RT_Instability_"
+  checkpointFileIntervalTime = 1.0
+  checkpointFileIntervalStep = 0
+  plotFileIntervalTime = 0.1
+  plotFileIntervalStep = 0
   checkpointFileNumber = 0
   rolling_checkpoint = 2
   plotFileNumber = 0
@@ -70,4 +69,5 @@
   plot_var_3 = "vely"
   plot_var_4 = "dfun"
   plot_var_5 = "dust"
+  plot_var_6 = "rhoc"
   ignoreForcedPlot = true

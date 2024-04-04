@@ -25,6 +25,9 @@ fi
 export AMREX2D_HOME="$PROJECT_HOME/software/amrex/AMReX/install-$SiteName/2D"
 export AMREX3D_HOME="$PROJECT_HOME/software/amrex/AMReX/install-$SiteName/3D"
 
+# Path to Flash-X
+export FLASHX_HOME="$PROJECT_HOME/software/flashx/Flash-X"
+
 # Output information to stdout
 echo "---------------------------------------------------------------------------------------"
 echo "Execution Environment:"

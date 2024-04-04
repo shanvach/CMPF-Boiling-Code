@@ -21,7 +21,6 @@
   nucWaitTime = 0.4
   numSites = 300
 
-
 [Logfile]
   run_comment = "Flow Boiling problem"
   log_file = "INS_Flow_Boiling.log"
@@ -34,10 +33,10 @@
   ymax = 5.0
   xl_boundary_type = "inflow_ins"
   xr_boundary_type = "outflow_ins"
-  yl_boundary_type = "inflow_ins"
+  yl_boundary_type = "noslip_ins"
   yr_boundary_type = "slip_ins"
   gr_amrexMG_composite_solve = true
-  gr_amrexMG_Tol = 1.0e-12
+  gr_amrexMG_Tol = 1.0e-13
   gr_amrexMG_max_iter = 200
   nblockx = 100
   nblocky = 10
@@ -90,8 +89,8 @@
 
 [IO]
   basenm = "INS_Flow_Boiling_"
-  checkpointFileIntervalTime = 5.0
-  plotFileIntervalTime = 1.0
+  checkpointFileIntervalTime = 1.0
+  plotFileIntervalTime = 0.1
   checkpointFileNumber = 0
   rolling_checkpoint = 2
   plotFileNumber = 0

@@ -16,14 +16,11 @@
 
 # schedular configuration
 schedular:
-  command: bsub
+  command: sbatch
   options:
-    - "#BSUB -P ast136"
-    - "#BSUB -W 2:00"
-    - "#BSUB -J boiling"
-    - "#BSUB -o o%J.boiling"
-    - "#BSUB -e o%J.boiling"
-    - "#BSUB -nnodes 1"
+    - "#SBATCH --ntasks=10"
+    - "#SBATCH -t 0-30:00"
+    - "#SBATCH --job-name=os-fri"
 
 # job configuration
 job:
