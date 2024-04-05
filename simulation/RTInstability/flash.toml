@@ -6,10 +6,10 @@
 
 [Grid]
   geometry = "cartesian"
-  xmin = 0.0
-  xmax = 1.0
-  ymin = 0.0
-  ymax = 4.0
+  xmin = -0.5
+  xmax =  0.5
+  ymin = -2.0
+  ymax =  2.0
   xl_boundary_type = "slip_ins"
   xr_boundary_type = "slip_ins"
   yl_boundary_type = "noslip_ins"
@@ -26,7 +26,7 @@
   enableMaskedGCFill = true
 
 [IncompNS]
-  ins_invReynolds = 0.0285
+  ins_invReynolds = 0.00082
   ins_gravY = -1.0
   ins_cflFlg = 0
   ins_cfl = 0.3
@@ -39,12 +39,14 @@
 [Simulation]
   sim_lengthScaleMeters = 1.0
   sim_timeScaleSeconds = 1.0
+  sim_initAmplitude = 0.1
+  sim_initEta = 1.0
 
 [Multiphase]
-  mph_rhoGas = 0.001
-  mph_muGas = 0.01
+  mph_rhoGas = 0.01
+  mph_muGas = 1
   mph_iPropSmear = 1.5
-  mph_invWeber = 0.001
+  mph_invWeber = 0.01
 
 [Driver]
   restart = false

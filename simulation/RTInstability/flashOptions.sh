@@ -1,6 +1,6 @@
 # cache the value of current working directory
 
-FlashSha="3cdc71bf"
+FlashSha="5aa7289e"
 
 FlashOptions="incompFlow/RTInstability -auto -maxblocks=100 -2d -nxb=16 -nyb=16 +amrex +parallelIO -site=$SiteHome +incomp"
 
