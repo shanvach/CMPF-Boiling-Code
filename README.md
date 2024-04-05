@@ -76,7 +76,7 @@ The directory tree is divided into three major components $\textemdash$ software
 
 The ``software/`` component provides scripts to install software packages with compatible configuration. 
 
-The ``simulation/`` component contains specific simulations as directory objects, with the ability to configure each of them with different flavors. As an example, ``simulation/PoolBoiling`` can be configured for single and multiple bubble problems by creating sub-directories ``simulation/PoolBoiling/SingleBubble`` and ``simulation/PoolBoiling/Gravity-FC72`` with their respective options, Jobfiles, and commands.
+The ``simulation/`` component contains specific simulations as directory objects, with the ability to configure each of them with different flavors. As an example, ``simulation/PoolBoiling`` can be configured for single and multiple bubble problems by creating sub-directories ``simulation/RisingBubble`` and ``simulation/FlowBoiling`` with their respective options, Jobfiles, and commands.
 
 The ``analysis/`` component is designed to setup data analysis and machine learning workflows and is currently a work in progress.
 
@@ -91,7 +91,7 @@ Once a user has installed necessary libaries/tools, i.e., Jobrunner, MPI, HDF5, 
 This will create a `config.sh` which controls site specific options.
 
 ```
-jobrunner setup software/amrex software/flashx software/flashkit --verbose
+jobrunner setup software/amrex software/flashx software/flashkit software/hdf5 --verbose
 ```
 
 This command will checkout appropriate SHA-1 for Flash-X, AMReX, and FlashKit, and install them using base libraries and paths provided in ``environment.sh``
@@ -99,20 +99,20 @@ This command will checkout appropriate SHA-1 for Flash-X, AMReX, and FlashKit, a
 Setting up a simulation is done in similar way by running setup command as,
 
 ```
-jobrunner setup simulation/FlowBoiling --verbose
+jobrunner setup simulation/RisingBubble --verbose
 ```
 
 and then running it using,
 
 ```
-jobrunner submit simulation/FlowBoiling
+jobrunner submit simulation/RisingBubble --verbose
 ```
 
 Make sure to edit Jobfiles as desired to change/update your schedular configuration.
 
 TIP: use `--show` with `jobrunner setup` and `jobrunner submit` to see the parsed configuration for a working directory derived from Jobfiles along the directory tree.
 
-To visualize data using ParaView run following from the working directory of a job run,
+To visualize data using ParaView run following from the directory simulation/RisingBubble,
 
 ```
 flashkit create xdmf -b <begin_number> -e <end_number>
@@ -120,4 +120,9 @@ flashkit create xdmf -b <begin_number> -e <end_number>
 
 The `<begin_number>` and `<end_number>` refer to the files containing the pattern `*_hdf5_plt_cnt_*`. The resulting `*.xmf` file is ParaView compatible.
 
-BoxKit is used to access raw simulation data in Python. Several IPython notebooks and scripts in the `analysis/` folder use it for post processing. 
+BoxKit is used to access raw simulation data in Python. Several IPython notebooks and scripts in the `analysis/` folder use it for post processing.
+
+
+## Help
+
+File an issue in this repository if you run into issues reproducing the example
