@@ -15,12 +15,14 @@
 #
 
 # schedular configuration
+#schedular:
+#  command: sbatch
+#  options:
+#    - "#SBATCH --ntasks=10"
+#    - "#SBATCH -t 0-30:00"
+#    - "#SBATCH --job-name=os-fri"
 schedular:
-  command: sbatch
-  options:
-    - "#SBATCH --ntasks=10"
-    - "#SBATCH -t 0-30:00"
-    - "#SBATCH --job-name=os-fri"
+   command: bash
 
 # job configuration
 job:

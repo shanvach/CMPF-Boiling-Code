@@ -13,5 +13,5 @@ if [[ $SiteName == "summit/gcc-10.2.0" || $SiteName == "summit/gcc-9.3.0" ]]; th
 else
 
 	echo Running on $SiteName
-        cd $JobWorkDir && mpirun $JobWorkDir/job.target
+        cd $JobWorkDir && mpirun -n 1 $JobWorkDir/job.target
 fi
