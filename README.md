@@ -1,4 +1,4 @@
-## Laboratory notebook and execution for GitHub Open Source Fridays Demonstration
+## Laboratory Notebook and Execution Environment for GitHub Open Source Fridays Demonstration
 
 ## Overview
 
