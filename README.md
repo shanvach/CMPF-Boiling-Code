@@ -1,4 +1,4 @@
-## Laboratory notebook and execution for GitHub Open Source Fridays Demonstration
+## Laboratory Notebook and Execution Environment for GitHub Open Source Fridays Demonstration
 
 ## Overview
 
@@ -48,7 +48,7 @@ Note that versions for generic softwares are listed only to enhance knowledge re
 
 ## Organization 
 
-Directory strucuture of this repository plays an important role in repoducibility and consitency of the computational experiments, and is one of the most important aspects that a user may want to focus on when extending/contributing towards current work. To understand the nuances of the design of the directory tree provided here, we recommened reading details of Jobrunner (https://github.com/akashdhruv/Jobrunner). 
+Directory strucuture of this repository plays an important role in repoducibility and consitency of the computational experiments, and is one of the most important aspects that a user may want to focus on when extending/contributing towards current work. To understand the nuances of the design of the directory tree provided here, we recommened reading details of Jobrunner (https://arxiv.org/pdf/2308.15637.pdf). 
 
 ```
 $ tree Boiling-Simulations
