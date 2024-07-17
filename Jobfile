@@ -15,14 +15,19 @@
 #
 
 # schedular configuration
-#schedular:
-#  command: sbatch
-#  options:
+schedular:
+  command: sbatch
+  options:
 #    - "#SBATCH --ntasks=10"
 #    - "#SBATCH -t 0-30:00"
 #    - "#SBATCH --job-name=os-fri"
-schedular:
-   command: bash
+    - "#SBATCH -n 10"
+    - "#SBATCH -t 5:00:00"
+    - "#SBATCH --mem-per-cpu=1024"
+    - "#    SBATCH -share"
+    - "#SBATCH --exclusive"
+    - "#SBATCH --partition=standard"
+    - "#SBATCH --export=NONE"
 
 # job configuration
 job:

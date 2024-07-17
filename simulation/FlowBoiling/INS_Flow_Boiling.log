@@ -1,0 +1,2259 @@
+ FLASH log file:  07-15-2024  16:44:10.545    Run number:  1
+ ==============================================================================
+ Number of MPI tasks:                 10
+ MPI version:                          3
+ MPI subversion:                       1
+ Dimensionality:                       2
+ Max Number of Blocks/Proc:          100
+ Number x zones:                      16
+ Number y zones:                      16
+ Number z zones:                       1
+ Setup stamp:     Mon Jul 15 16:21:13 2024
+ Build stamp:     Mon Jul 15 16:24:00 2024
+ System info:     Linux login-1.zaratan.umd.edu 4.18.0-513.5.1.el8_9.x86_64 #1 SMP Fri Sep 29 05:2
+ Version:         Flash-X 1.0 (heads/shanvach/incomp-heater-updates-0-g6a62ce97-dirty)            
+ Build directory: /scratch/zt1/project/ariaz-prj/user/svachhan/Flash-X-Demo/software/flashx/Flash-
+ Setup syntax:    /scratch/zt1/project/ariaz-prj/user/svachhan/Flash-X-Demo/software/flashx/Flash-X/bin/setup.py incompFlow/FlowBoiling -auto -maxblocks=100 -2d -nxb=16 -nyb=16 +amrex +parallelIO -site=/scratch/zt1/project/ariaz-prj/user/svachhan/Flash-X-Demo/sites/zaratan.umd.edu +incomp
+ f compiler flags: /cvmfs/hpcsw.umd.edu/spack-software/2022.06.15/linux-rhel8-zen2/gcc-9.4.0/openmpi-4.1.1-hm2fkyfi7d5ggq4hg2xn4dtzf2o5r2rx/bin/mpif90 -I/scratch/zt1/project/ariaz-prj/user/svachhan/Flash-X-Demo/software/amrex/AMReX/install-zaratan.umd.edu/2D/include -I/cvmfs/hpcsw.umd.edu/spack-software/2022.06.15/linux-rhel8-zen2/gcc-9.4.0/hdf5-1.10.7-fjan65etjt7gsfdld7em6n2jmsh5mhxi/include -DH5_USE_18_API -c -O3
+ c compiler flags:    /cvmfs/hpcsw.umd.edu/spack-software/2022.06.15/linux-rhel8-zen2/gcc-9.4.0/openmpi-4.1.1-hm2fkyfi7d5ggq4hg2xn4dtzf2o5r2rx/bin/mpicc -I/scratch/zt1/project/ariaz-prj/user/svachhan/Flash-X-Demo/software/amrex/AMReX/install-zaratan.umd.edu/2D/include -I/cvmfs/hpcsw.umd.edu/spack-software/2022.06.15/linux-rhel8-zen2/gcc-9.4.0/hdf5-1.10.7-fjan65etjt7gsfdld7em6n2jmsh5mhxi/include -DH5_USE_18_API -c -O3 -
+ ==============================================================================
+ Comment:  Flow Boiling problem
+ ==============================================================================
+ FLASH Units used:
+   Driver/DriverMain/Incomp
+   Grid/GridBoundaryConditions
+   Grid/GridMain/AMR/Amrex/Incomp
+   Grid/GridMain/AMR/Amrex/levelFlux
+   Grid/GridSolvers/AmrexMultigridSolver
+   IO/IOMain/hdf5/AM
+   IO/IOMain/hdf5/parallel/AM
+   IO/IOMain/hdf5/writeGrid/AM
+   PhysicalConstants/PhysicalConstantsMain
+   RuntimeParameters/RuntimeParametersMain
+   Simulation/SimulationMain/incompFlow/FlowBoiling
+   TimeAdvance/TimeAdvanceMain/StrangSplit
+   flashUtilities/contiguousConversion
+   flashUtilities/general
+   flashUtilities/interpolation/oneDim
+   flashUtilities/nameValueLL
+   flashUtilities/system/memoryUsage/legacy
+   monitors/Logfile/LogfileMain
+   monitors/Timers/TimersMain/MPINative
+   numericalTools/Stencils/StencilsAdvection
+   numericalTools/Stencils/StencilsDiffusion
+   numericalTools/Stencils/StencilsLevelset
+   numericalTools/Stencils/StencilsMain
+   numericalTools/Stencils/StencilsTemporal
+   physics/HeatAD/HeatADAdvection
+   physics/HeatAD/HeatADMain/varDiffusion
+   physics/IncompNS/IncompNSExtras
+   physics/IncompNS/IncompNSMain/varDens/presPoisson
+   physics/Multiphase/MultiphaseEvap
+   physics/Multiphase/MultiphaseMain
+   physics/sourceTerms/Heater/HeaterMain
+   physics/sourceTerms/Inlet/InletMain
+   physics/sourceTerms/Outlet/OutletMain/phaseForcing
+ ==============================================================================
+ RuntimeParameters:
+                                                                               
+ ==============================================================================
+bndpriorityone              =          1
+bndprioritythree            =          3
+bndprioritytwo              =          2
+checkpointfileintervalstep  =          0
+checkpointfilenumber        =          0
+dr_abortpause               =          2
+dr_dtminbelowaction         =          1
+drift_break_inst            =          0
+drift_trunc_mantissa        =          2
+drift_verbose_inst          =          0
+fileformatversion           =          9
+forcedplotfilenumber        =          0
+gr_amrexmg_cg_verbose       =          0
+gr_amrexmg_linop_maxorder   =          2
+gr_amrexmg_max_fmg_iter     =          0
+gr_amrexmg_max_grid_size    =         16
+gr_amrexmg_max_iter         =        200 [CHANGED]
+gr_amrexmg_max_level        =          1
+gr_amrexmg_n_cell           =         32
+gr_amrexmg_prob_type        =          1
+gr_amrexmg_ref_ratio        =          2
+gr_amrexmg_verbose          =          2
+gr_amrex_verbosity          =          1
+gr_lrefmaxtimevalue_1       =         -1
+gr_lrefmaxtimevalue_10      =         -1
+gr_lrefmaxtimevalue_11      =         -1
+gr_lrefmaxtimevalue_12      =         -1
+gr_lrefmaxtimevalue_13      =         -1
+gr_lrefmaxtimevalue_14      =         -1
+gr_lrefmaxtimevalue_15      =         -1
+gr_lrefmaxtimevalue_16      =         -1
+gr_lrefmaxtimevalue_17      =         -1
+gr_lrefmaxtimevalue_18      =         -1
+gr_lrefmaxtimevalue_19      =         -1
+gr_lrefmaxtimevalue_2       =         -1
+gr_lrefmaxtimevalue_20      =         -1
+gr_lrefmaxtimevalue_3       =         -1
+gr_lrefmaxtimevalue_4       =         -1
+gr_lrefmaxtimevalue_5       =         -1
+gr_lrefmaxtimevalue_6       =         -1
+gr_lrefmaxtimevalue_7       =         -1
+gr_lrefmaxtimevalue_8       =         -1
+gr_lrefmaxtimevalue_9       =         -1
+gr_restrictallmethod        =          3
+gr_sanitizedatamode         =          0
+gr_tilesizex                =         16
+gr_tilesizey                =         16
+gr_tilesizez                =          1
+ht_intschm                  =          2
+htr_annqueries              =          3
+htr_numheaters              =          2 [CHANGED]
+iprocs                      =          1
+ins_advschm                 =          2 [CHANGED]
+ins_cflflg                  =          1
+ins_intschm                 =          2
+ins_isgs                    =          0
+ins_velprolongmethod        =          1
+interpol_order              =          2
+jprocs                      =          1
+kprocs                      =          1
+lrefine_del                 =          0
+lrefine_max                 =          1
+lrefine_min                 =          1
+max_particles_per_blk       =        100
+memory_stat_freq            =     100000
+meshcopycount               =          1
+min_particles_per_blk       =          1
+mph_extpit                  =          5
+mph_lsit                    =          2
+nbegin                      =          1
+nblockx                     =        100 [CHANGED]
+nblocky                     =         10 [CHANGED]
+nblockz                     =          1
+nend                        =    1200000 [CHANGED]
+nrefs                       =   10000000 [CHANGED]
+nsteptotalsts               =          5
+outputsplitnum              =          1
+plotfileintervalstep        =          0
+plotfilenumber              =          0
+refine_var_count            =          4
+rolling_checkpoint          =        150 [CHANGED]
+sweeporder                  =        123
+wr_integrals_freq           =          1
+checkpointfileintervaltime  =                 0.100E+01
+checkpointfileintervalz     =                 0.180+309
+derefine_cutoff_1           =                 0.200E+00
+derefine_cutoff_2           =                 0.200E+00
+derefine_cutoff_3           =                 0.200E+00
+derefine_cutoff_4           =                 0.200E+00
+dr_dtmincontinue            =                 0.000E+00
+dr_tstepslowstartfactor     =                 0.100E+00
+dtinit                      =                 0.100E-03 [CHANGED]
+dtmax                       =                 0.400E-03 [CHANGED]
+dtmin                       =                 0.100E-09
+gr_amrexmg_tol              =                 0.100E-08 [CHANGED]
+gr_btworkchildscaling       =                 0.100E+01
+gr_btworkdefaultleaf        =                 0.200E+01
+gr_btworkdefaultpar         =                 0.100E+01
+gr_btworklbleaf             =                 0.000E+00
+gr_btworklbpar              =                 0.000E+00
+gr_btworkubleaf             =                 0.100E+07
+gr_btworkubpar              =                 0.100E+07
+gr_lrefinemaxredlogbase     =                 0.100E+02
+gr_lrefinemaxredradiusfact  =                 0.000E+00
+gr_lrefinemaxredtref        =                 0.000E+00
+gr_lrefinemaxredtimescale   =                 0.100E+01
+gr_lrefmaxtime_1            =                -0.100E+01
+gr_lrefmaxtime_10           =                -0.100E+01
+gr_lrefmaxtime_11           =                -0.100E+01
+gr_lrefmaxtime_12           =                -0.100E+01
+gr_lrefmaxtime_13           =                -0.100E+01
+gr_lrefmaxtime_14           =                -0.100E+01
+gr_lrefmaxtime_15           =                -0.100E+01
+gr_lrefmaxtime_16           =                -0.100E+01
+gr_lrefmaxtime_17           =                -0.100E+01
+gr_lrefmaxtime_18           =                -0.100E+01
+gr_lrefmaxtime_19           =                -0.100E+01
+gr_lrefmaxtime_2            =                -0.100E+01
+gr_lrefmaxtime_20           =                -0.100E+01
+gr_lrefmaxtime_3            =                -0.100E+01
+gr_lrefmaxtime_4            =                -0.100E+01
+gr_lrefmaxtime_5            =                -0.100E+01
+gr_lrefmaxtime_6            =                -0.100E+01
+gr_lrefmaxtime_7            =                -0.100E+01
+gr_lrefmaxtime_8            =                -0.100E+01
+gr_lrefmaxtime_9            =                -0.100E+01
+ht_nusselt                  =                 0.100E+01
+ht_prandtl                  =                 0.840E+01 [CHANGED]
+ht_tbulk                    =                 0.000E+00
+ht_twall_high               =                 0.100E+01
+ht_twall_low                =                 0.000E+00
+htr_nucseedradius           =                 0.100E+00
+in_buffer                   =                 0.100E+01
+in_growthrate               =                 0.400E+01
+in_sink                     =                -0.100E+01
+ins_cfl                     =                 0.500E-01 [CHANGED]
+ins_dpdx                    =                 0.000E+00
+ins_dpdy                    =                 0.000E+00
+ins_dpdz                    =                 0.000E+00
+ins_dtspec                  =                 0.100E-03 [CHANGED]
+ins_gravx                   =                 0.000E+00
+ins_gravy                   =                -0.100E+01 [CHANGED]
+ins_gravz                   =                 0.000E+00
+ins_inflowvelscale          =                 0.100E+01
+ins_invreynolds             =                 0.420E-02 [CHANGED]
+ins_sigma                   =                 0.500E-01 [CHANGED]
+mph_cpgas                   =                 0.830E+00 [CHANGED]
+mph_stefan                  =                 0.530E+00 [CHANGED]
+mph_tsat                    =                 0.150E+00 [CHANGED]
+mph_ipropsmear              =                 0.150E+01 [CHANGED]
+mph_invweber                =                 0.100E+01
+mph_mugas                   =                 0.100E+01
+mph_rhogas                  =                 0.830E-02 [CHANGED]
+mph_thcogas                 =                 0.250E+00 [CHANGED]
+nusts                       =                 0.100E+00
+out_buffer                  =                 0.200E+01 [CHANGED]
+out_growthrate              =                 0.400E+01
+out_sink                    =                -0.100E+01
+out_velrefscale             =                 0.100E+01
+plotfileintervaltime        =                 0.500E+00 [CHANGED]
+plotfileintervalz           =                 0.180+309
+refine_cutoff_1             =                 0.800E+00
+refine_cutoff_2             =                 0.800E+00
+refine_cutoff_3             =                 0.800E+00
+refine_cutoff_4             =                 0.800E+00
+refine_filter_1             =                 0.100E-01
+refine_filter_2             =                 0.100E-01
+refine_filter_3             =                 0.100E-01
+refine_filter_4             =                 0.100E-01
+rss_limit                   =                -0.100E+01
+sim_lengthscalemeters       =                 0.100E-02 [CHANGED]
+sim_timescaleseconds        =                 0.100E-01 [CHANGED]
+small                       =                 0.100E-09
+smalle                      =                 0.100E-09
+smallp                      =                 0.100E-09
+smallt                      =                 0.100E-09
+smallu                      =                 0.100E-09
+smallx                      =                 0.100E-09
+smlrho                      =                 0.100E-09
+tinitial                    =                 0.000E+00
+tmax                        =                 0.500E+01 [CHANGED]
+tstep_change_factor         =                 0.101E+01 [CHANGED]
+wall_clock_checkpoint       =                 0.432E+05
+wall_clock_time_limit       =                -0.100E+01 [CHANGED]
+x_refine_center             =                 0.000E+00
+xmax                        =                 0.250E+02 [CHANGED]
+xmin                        =                -0.250E+02 [CHANGED]
+y_refine_center             =                 0.000E+00
+ymax                        =                 0.500E+01 [CHANGED]
+ymin                        =                 0.000E+00
+zfinal                      =                 0.000E+00
+zinitial                    =                -0.100E+01
+z_refine_center             =                 0.000E+00
+zmax                        =                 0.100E+01
+zmin                        =                 0.000E+00
+amrexfaceinterpolator       = FACE_LINEAR                   
+amrexinterpolator           = CELL_CONSERVATIVE_LINEAR      
+basenm                      = INS_Flow_Boiling_              [CHANGED]
+eosmode                     = dens_ie                       
+eosmodeinit                 = dens_ie                       
+geometry                    = cartesian                     
+grav_boundary_type          = isolated                      
+htr_heatername              = flow_boiling                   [CHANGED]
+log_file                    = INS_Flow_Boiling.log           [CHANGED]
+output_directory            =                               
+pc_unitsbase                = CGS                           
+plot_grid_var_1             = none                          
+plot_grid_var_10            = none                          
+plot_grid_var_11            = none                          
+plot_grid_var_12            = none                          
+plot_grid_var_13            = none                          
+plot_grid_var_14            = none                          
+plot_grid_var_15            = none                          
+plot_grid_var_16            = none                          
+plot_grid_var_17            = none                          
+plot_grid_var_18            = none                          
+plot_grid_var_19            = none                          
+plot_grid_var_2             = none                          
+plot_grid_var_20            = none                          
+plot_grid_var_21            = none                          
+plot_grid_var_22            = none                          
+plot_grid_var_23            = none                          
+plot_grid_var_24            = none                          
+plot_grid_var_25            = none                          
+plot_grid_var_26            = none                          
+plot_grid_var_27            = none                          
+plot_grid_var_28            = none                          
+plot_grid_var_29            = none                          
+plot_grid_var_3             = none                          
+plot_grid_var_30            = none                          
+plot_grid_var_31            = none                          
+plot_grid_var_32            = none                          
+plot_grid_var_33            = none                          
+plot_grid_var_34            = none                          
+plot_grid_var_35            = none                          
+plot_grid_var_36            = none                          
+plot_grid_var_37            = none                          
+plot_grid_var_38            = none                          
+plot_grid_var_39            = none                          
+plot_grid_var_4             = none                          
+plot_grid_var_40            = none                          
+plot_grid_var_41            = none                          
+plot_grid_var_42            = none                          
+plot_grid_var_43            = none                          
+plot_grid_var_44            = none                          
+plot_grid_var_45            = none                          
+plot_grid_var_46            = none                          
+plot_grid_var_47            = none                          
+plot_grid_var_48            = none                          
+plot_grid_var_49            = none                          
+plot_grid_var_5             = none                          
+plot_grid_var_50            = none                          
+plot_grid_var_51            = none                          
+plot_grid_var_52            = none                          
+plot_grid_var_53            = none                          
+plot_grid_var_54            = none                          
+plot_grid_var_55            = none                          
+plot_grid_var_56            = none                          
+plot_grid_var_57            = none                          
+plot_grid_var_58            = none                          
+plot_grid_var_59            = none                          
+plot_grid_var_6             = none                          
+plot_grid_var_60            = none                          
+plot_grid_var_61            = none                          
+plot_grid_var_62            = none                          
+plot_grid_var_63            = none                          
+plot_grid_var_64            = none                          
+plot_grid_var_65            = none                          
+plot_grid_var_66            = none                          
+plot_grid_var_67            = none                          
+plot_grid_var_68            = none                          
+plot_grid_var_69            = none                          
+plot_grid_var_7             = none                          
+plot_grid_var_70            = none                          
+plot_grid_var_71            = none                          
+plot_grid_var_72            = none                          
+plot_grid_var_73            = none                          
+plot_grid_var_74            = none                          
+plot_grid_var_75            = none                          
+plot_grid_var_76            = none                          
+plot_grid_var_77            = none                          
+plot_grid_var_78            = none                          
+plot_grid_var_8             = none                          
+plot_grid_var_9             = none                          
+plot_var_1                  = pres                           [CHANGED]
+plot_var_10                 = none                          
+plot_var_11                 = none                          
+plot_var_12                 = none                          
+plot_var_13                 = none                          
+plot_var_14                 = none                          
+plot_var_15                 = none                          
+plot_var_16                 = none                          
+plot_var_17                 = none                          
+plot_var_18                 = none                          
+plot_var_19                 = none                          
+plot_var_2                  = velx                           [CHANGED]
+plot_var_20                 = none                          
+plot_var_21                 = none                          
+plot_var_22                 = none                          
+plot_var_23                 = none                          
+plot_var_24                 = none                          
+plot_var_25                 = none                          
+plot_var_3                  = vely                           [CHANGED]
+plot_var_4                  = dfun                           [CHANGED]
+plot_var_5                  = temp                           [CHANGED]
+plot_var_6                  = none                          
+plot_var_7                  = none                          
+plot_var_8                  = none                          
+plot_var_9                  = none                          
+prof_file                   = profile.dat                   
+refine_var_1                = none                          
+refine_var_2                = none                          
+refine_var_3                = none                          
+refine_var_4                = none                          
+run_comment                 = Flow Boiling problem           [CHANGED]
+run_number                  = 1                             
+stats_file                  = flashx.dat                    
+xl_boundary_type            = inflow_ins                     [CHANGED]
+xr_boundary_type            = outflow_ins                    [CHANGED]
+yl_boundary_type            = noslip_ins                     [CHANGED]
+yr_boundary_type            = noslip_ins                     [CHANGED]
+zl_boundary_type            = periodic                      
+zr_boundary_type            = periodic                      
+csvsummaryallprocs          =  F
+logsummaryallprocs          =  F
+allowdtstsdominate          =  F
+alwayscomputeuservars       =  T
+alwaysrestrictcheckpoint    =  T
+chkguardcellsinput          =  F
+chkguardcellsoutput         =  F
+converttoconsvdformeshcalls =  F
+converttoconsvdinmeshinterp =  F
+corners                     =  F
+dr_printtsteploc            =  T
+dr_rununittest              =  F
+dr_shortenlaststepbeforetmax =  F
+drift_tuples                =  F
+eachprocwritesownabortlog   =  F
+eachprocwritessummary       =  F
+earlyblockdistadjustment    =  T
+enablemaskedgcfill          =  T
+flux_correct                =  T
+flux_correct_perlevel       =  T
+geometryoverride            =  F
+gr_amrexmg_agglomeration    =  T
+gr_amrexmg_composite_solve  =  T [CHANGED]
+gr_amrexmg_consolidation    =  T
+gr_amrexusebittree          =  F
+gr_bcenableapplymixedgds    =  F
+gr_bndgcfillneedsprimitivevars =  F
+gr_btcustomwork             =  F
+gr_btexchangework           =  F
+gr_btsortbywork             =  T
+gr_enabletiling             =  F
+gr_gcfillsinglevarrange     =  F
+gr_lrefinemaxbytime         =  F
+gr_lrefinemaxreddobylogr    =  F
+gr_lrefinemaxreddobytime    =  F
+gr_usetiling                =  F
+htr_showinfo                =  F
+ignoreforcedplot            =  T [CHANGED]
+ins_pressurecorrect         =  F [CHANGED]
+io_plotfileamrexformat      =  F
+io_writemscalarintegrals    =  F
+plotfilegridquantitydp      =  F
+plotfilemetadatadp          =  F
+reducegcellfills            =  F
+refine_on_particle_count    =  F
+restart                     =  F
+summaryoutputonly           =  F
+threadblocklistbuild        =  F
+threaddelepblocklist        =  F
+threaddelepwithinblock      =  F
+threaddriverblocklist       =  F
+threaddriverwithinblock     =  F
+threadraytracebuild         =  F
+threadwithinblockbuild      =  F
+tmr_suppressinparallel      =  F
+typematchedxfer             =  T
+unbiased_geometry           =  F
+useburn                     =  F
+usecollectivehdf5           =  T
+usedeleptonize              =  F
+usegravity                  =  F
+useheatad                   =  T
+useheater                   =  T
+usehydro                    =  F
+useimbound                  =  F
+useincompns                 =  T
+useinlet                    =  T
+uselegacylabels             =  T
+usemultiphase               =  T
+useoutlet                   =  T
+useparticles                =  F
+useradtrans                 =  F
+usests                      =  F
+usestsfordiffusion          =  F
+usesolidmechanics           =  F
+writestatsummary            =  T
+                                                                               
+ ==============================================================================
+                                                                               
+ Known units of measurement:
+                                                                               
+              Unit                          CGS Value                Base Unit
+  1                  cm                     1.0000                           cm
+  2                   s                     1.0000                            s
+  3                   g                     1.0000                            g
+  4                   K                     1.0000                            K
+  5                 esu                     1.0000                          esu
+  6                 mol                     1.0000                          mol
+  7                   m                     100.00                           cm
+  8                  km                    1.00000E+05                       cm
+  9                  pc                    3.08568E+18                       cm
+ 10                 kpc                    3.08568E+21                       cm
+ 11                 Mpc                    3.08568E+24                       cm
+ 12                 Gpc                    3.08568E+27                       cm
+ 13                Rsun                    6.96000E+10                       cm
+ 14                  AU                    1.49598E+13                       cm
+ 15                  yr                    3.15569E+07                        s
+ 16                 Myr                    3.15569E+13                        s
+ 17                 Gyr                    3.15569E+16                        s
+ 18                  kg                     1000.0                            g
+ 19                Msun                    1.98892E+33                        g
+ 20                 amu                    1.66054E-24                        g
+ 21                  eV                     11605.                            K
+ 22                   C                    2.99792E+09                      esu
+ 23                LFLY                    3.08568E+24                       cm
+ 24                TFLY                    2.05759E+17                        s
+ 25                MFLY                    9.88470E+45                        g
+ 26            clLength                    3.08568E+24                       cm
+ 27              clTime                    3.15569E+16                        s
+ 28              clMass                    1.98892E+48                        g
+ 29              clTemp                    1.16045E+07                        K
+-----------End of Units--------------------
+                                                                               
+ Known physical constants:
+                                                                               
+    Constant Name       Constant Value   cm       s        g        K        esu      mol
+  1              Newton    6.67408E-08   3.0     -2.0     -1.0      0.0      0.0      0.0    
+  2      speed of light    2.99792E+10   1.0     -1.0      0.0      0.0      0.0      0.0    
+  3              Planck    6.62607E-27   2.0     -1.0      1.0      0.0      0.0      0.0    
+  4     electron charge    4.80320E-10   0.0      0.0      0.0      0.0      1.0      0.0    
+  5       electron mass    9.10938E-28   0.0      0.0      1.0      0.0      0.0      0.0    
+  6         proton mass    1.67262E-24   0.0      0.0      1.0      0.0      0.0      0.0    
+  7      fine-structure    7.29735E-03   0.0      0.0      0.0      0.0      0.0      0.0    
+  8            Avogadro    6.02214E+23   0.0      0.0      0.0      0.0      0.0     -1.0    
+  9           Boltzmann    1.38065E-16   2.0     -2.0      1.0     -1.0      0.0      0.0    
+ 10  ideal gas constant    8.31446E+07   2.0     -2.0      1.0     -1.0      0.0     -1.0    
+ 11                Wien    0.28978       1.0      0.0      0.0      1.0      0.0      0.0    
+ 12    Stefan-Boltzmann    5.67037E-05   0.0     -3.0      1.0     -4.0      0.0      0.0    
+ 13  Radiation Constant    7.56572E-15  -1.0     -2.0      1.0     -4.0      0.0      0.0    
+ 14                  pi     3.1416       0.0      0.0      0.0      0.0      0.0      0.0    
+ 15                   e     2.7183       0.0      0.0      0.0      0.0      0.0      0.0    
+ 16               Euler    0.57722       0.0      0.0      0.0      0.0      0.0      0.0    
+ ==============================================================================
+                                                                               
+ Multifluid database: not configured in
+                                                                               
+ ==============================================================================
+ [ 07-15-2024  16:44:10.552 ] [gr_initGeometry] checking BCs for idir: 1
+ [ 07-15-2024  16:44:10.553 ] [gr_initGeometry] checking BCs for idir: 2
+ [ 07-15-2024  16:44:10.554 ] [gr_amrexInit]: AMREX_GIT_VERSION=23.11
+ WARNING : Adaptive Grid did not find any variable to refine
+ [ 07-15-2024  16:44:11.124 ] [gr_initNewLevelCallback] Initialized data on level: 1
+ [ 07-15-2024  16:44:11.131 ] [gr_initNewLevelCallback] GC fill: 1
+ [ 07-15-2024  16:44:11.134 ] memory: /proc vsize    (MB):      402.10 (min)      14842.83 (max)       9315.61 (avg)
+ [ 07-15-2024  16:44:11.137 ] memory: /proc rss      (MB):      113.03 (min)        115.93 (max)        114.12 (avg)
+ [ 07-15-2024  16:44:11.138 ] memory: /proc vsize    (MB):      402.10 (min)      14842.83 (max)       9315.61 (avg)
+ [ 07-15-2024  16:44:11.141 ] memory: /proc rss      (MB):      113.03 (min)        115.93 (max)        114.12 (avg)
+ [ 07-15-2024  16:44:11.147 ] memory: /proc vsize    (MB):      402.10 (min)      14842.83 (max)       9315.61 (avg)
+ [ 07-15-2024  16:44:11.151 ] memory: /proc rss      (MB):      113.03 (min)        115.93 (max)        114.12 (avg)
+ [ 07-15-2024  16:44:11.256 ] [IO_writeCheckpoint] open: type=checkpoint name=INS_Flow_Boiling_hdf5_chk_0000
+ [ 07-15-2024  16:44:11.320 ] [io_writeData]: wrote    1000          blocks
+ [ 07-15-2024  16:44:11.327 ] [IO_writeCheckpoint] close: type=checkpoint name=INS_Flow_Boiling_hdf5_chk_0000
+ [ 07-15-2024  16:44:11.372 ] [IO_writePlotfile] open: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0000
+ [ 07-15-2024  16:44:11.389 ] [io_writeData]: wrote    1000          blocks
+ [ 07-15-2024  16:44:11.400 ] [IO_writePlotfile] close: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0000
+ [ 07-15-2024  16:44:11.401 ] memory: /proc vsize    (MB):      407.06 (min)      14851.94 (max)       9330.76 (avg)
+ [ 07-15-2024  16:44:11.402 ] memory: /proc rss      (MB):      115.31 (min)        121.62 (max)        116.86 (avg)
+ [ 07-15-2024  16:44:11.411 ] [Driver_evolveAll]: Entering evolution loop
+ [ 07-15-2024  16:44:11.411 ] [Driver_evolveAll] start-time: 0.0000000000000E+00
+ [ 07-15-2024  16:46:45.233 ] [IO_writePlotfile] open: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0001
+ [ 07-15-2024  16:46:45.250 ] [io_writeData]: wrote    1000          blocks
+ [ 07-15-2024  16:46:45.260 ] [IO_writePlotfile] close: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0001
+ [ 07-15-2024  16:49:02.926 ] [IO_writePlotfile] open: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0002
+ [ 07-15-2024  16:49:02.949 ] [io_writeData]: wrote    1000          blocks
+ [ 07-15-2024  16:49:02.963 ] [IO_writePlotfile] close: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0002
+ [ 07-15-2024  16:49:03.029 ] [IO_writeCheckpoint] open: type=checkpoint name=INS_Flow_Boiling_hdf5_chk_0001
+ [ 07-15-2024  16:49:03.091 ] [io_writeData]: wrote    1000          blocks
+ [ 07-15-2024  16:49:03.105 ] [IO_writeCheckpoint] close: type=checkpoint name=INS_Flow_Boiling_hdf5_chk_0001
+ [ 07-15-2024  16:51:30.188 ] [IO_writePlotfile] open: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0003
+ [ 07-15-2024  16:51:30.207 ] [io_writeData]: wrote    1000          blocks
+ [ 07-15-2024  16:51:30.212 ] [IO_writePlotfile] close: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0003
+ [ 07-15-2024  16:54:04.070 ] [IO_writePlotfile] open: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0004
+ [ 07-15-2024  16:54:04.088 ] [io_writeData]: wrote    1000          blocks
+ [ 07-15-2024  16:54:04.091 ] [IO_writePlotfile] close: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0004
+ [ 07-15-2024  16:54:04.142 ] [IO_writeCheckpoint] open: type=checkpoint name=INS_Flow_Boiling_hdf5_chk_0002
+ [ 07-15-2024  16:54:04.202 ] [io_writeData]: wrote    1000          blocks
+ [ 07-15-2024  16:54:04.209 ] [IO_writeCheckpoint] close: type=checkpoint name=INS_Flow_Boiling_hdf5_chk_0002
+ [ 07-15-2024  16:56:33.444 ] [IO_writePlotfile] open: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0005
+ [ 07-15-2024  16:56:33.462 ] [io_writeData]: wrote    1000          blocks
+ [ 07-15-2024  16:56:33.467 ] [IO_writePlotfile] close: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0005
+ [ 07-15-2024  16:59:06.870 ] [IO_writePlotfile] open: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0006
+ [ 07-15-2024  16:59:06.886 ] [io_writeData]: wrote    1000          blocks
+ [ 07-15-2024  16:59:06.889 ] [IO_writePlotfile] close: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0006
+ [ 07-15-2024  16:59:06.951 ] [IO_writeCheckpoint] open: type=checkpoint name=INS_Flow_Boiling_hdf5_chk_0003
+ [ 07-15-2024  16:59:07.014 ] [io_writeData]: wrote    1000          blocks
+ [ 07-15-2024  16:59:07.020 ] [IO_writeCheckpoint] close: type=checkpoint name=INS_Flow_Boiling_hdf5_chk_0003
+ [ 07-15-2024  17:01:47.190 ] [IO_writePlotfile] open: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0007
+ [ 07-15-2024  17:01:47.208 ] [io_writeData]: wrote    1000          blocks
+ [ 07-15-2024  17:01:47.211 ] [IO_writePlotfile] close: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0007
+ [ 07-15-2024  17:04:20.345 ] [IO_writePlotfile] open: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0008
+ [ 07-15-2024  17:04:20.364 ] [io_writeData]: wrote    1000          blocks
+ [ 07-15-2024  17:04:20.368 ] [IO_writePlotfile] close: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0008
+ [ 07-15-2024  17:04:20.504 ] [IO_writeCheckpoint] open: type=checkpoint name=INS_Flow_Boiling_hdf5_chk_0004
+ [ 07-15-2024  17:04:20.560 ] [io_writeData]: wrote    1000          blocks
+ [ 07-15-2024  17:04:20.572 ] [IO_writeCheckpoint] close: type=checkpoint name=INS_Flow_Boiling_hdf5_chk_0004
+ [ 07-15-2024  17:06:52.278 ] [IO_writePlotfile] open: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0009
+ [ 07-15-2024  17:06:52.328 ] [io_writeData]: wrote    1000          blocks
+ [ 07-15-2024  17:06:52.343 ] [IO_writePlotfile] close: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0009
+ [ 07-15-2024  17:09:26.868 ] [IO_writePlotfile] open: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0010
+ [ 07-15-2024  17:09:26.885 ] [io_writeData]: wrote    1000          blocks
+ [ 07-15-2024  17:09:26.889 ] [IO_writePlotfile] close: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0010
+ [ 07-15-2024  17:09:26.955 ] [IO_writeCheckpoint] open: type=checkpoint name=INS_Flow_Boiling_hdf5_chk_0005
+ [ 07-15-2024  17:09:27.019 ] [io_writeData]: wrote    1000          blocks
+ [ 07-15-2024  17:09:27.032 ] [IO_writeCheckpoint] close: type=checkpoint name=INS_Flow_Boiling_hdf5_chk_0005
+ [ 07-15-2024  17:09:27.034 ] [Driver_evolveAll] end-time: 5.0000411933245E+00
+ [ 07-15-2024  17:09:27.035 ] [Driver_evolveAll]: Exiting evolution loop
+ [ 07-15-2024  17:09:27.096 ] [IO_writePlotfile] open: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0011
+ [ 07-15-2024  17:09:27.114 ] [io_writeData]: wrote    1000          blocks
+ [ 07-15-2024  17:09:27.119 ] [IO_writePlotfile] close: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0011
+ [ 07-15-2024  17:09:27.120 ] memory: /proc vsize    (MB):      423.07 (min)      14861.73 (max)       9342.37 (avg)
+ [ 07-15-2024  17:09:27.123 ] memory: /proc rss      (MB):      125.31 (min)        129.58 (max)        127.54 (avg)
+ ==============================================================================
+ perf_summary: code performance summary for process            0
+                      beginning : 07-15-2024  16:44:10
+                         ending : 07-15-2024  17:09:27
+   seconds in monitoring period :             1516.579
+      number of evolution steps :                29071
+ ------------------------------------------------------------------------------
+ accounting unit                       time sec  num calls   secs avg  time pct
+ ------------------------------------------------------------------------------
+ initialization                          0.863      1           0.863     0.057
+  eos initNewLevel                       0.000      1           0.000     0.000
+  gr_multigridAmrexInit                  0.000      1           0.000     0.000
+  writeCheckpoint                        0.174      1           0.174     0.011
+  writePlotfile                          0.072      1           0.072     0.005
+   io_writeGrid                          0.007      1           0.007     0.000
+ writePlotfile                           0.083      1           0.083     0.005
+ evolution                            1515.621      1        1515.621    99.937
+  guardcell internal                   162.826 406995           0.000    10.736
+   amr_guardcell                       162.409 406995           0.000    10.709
+    gc unk                             122.355 377924           0.000     8.068
+    gc facevars                         39.870  87214           0.000     2.629
+  Heater_mapSitesToProc                  0.009      1           0.009     0.001
+  Multiphase_reInitGridVars             17.227 ******           0.000     1.136
+  IncompNS_reInitGridVars               47.718 ******           0.000     3.146
+  HeatAD_reInitGridVars                 13.340 ******           0.000     0.880
+  Heater_checkSites                      2.064 ******           0.000     0.136
+  Heater_tagSites                        0.028  29071           0.000     0.002
+  Heater_lsReInit                        6.448 ******           0.000     0.425
+  Multiphase_setFluidProps              54.037 ******           0.000     3.563
+  Multiphase_setThermalProp              3.057 ******           0.000     0.202
+  Multiphase_setPressureJum             11.530 ******           0.000     0.760
+  Multiphase_thermalForcing             16.422 ******           0.000     1.083
+  Multiphase_extrapFluxes               49.311 ******           0.000     3.251
+  Multiphase_setMassFlux                 1.929 ******           0.000     0.127
+  Outlet_setForcing                     91.285 ******           0.000     6.019
+  IncompNS_advection                    10.948 ******           0.000     0.722
+  IncompNS_diffusion                    11.500 ******           0.000     0.758
+  IncompNS_predictor                    12.419 ******           0.000     0.819
+  IncompNS_divergence                   10.605 ******           0.000     0.699
+  Multiphase_divergence                 22.006 ******           0.000     1.451
+  IncompNS_setupPoisson                 27.034 ******           0.000     1.783
+  Grid_solvePoisson                    624.235  29071           0.021    41.161
+  IncompNS_corrector                    34.149 ******           0.000     2.252
+  HeatAD_diffusion                       5.054 ******           0.000     0.333
+  HeatAD_advection                      51.338 ******           0.000     3.385
+  HeatAD_solve                           3.383 ******           0.000     0.223
+  Multiphase_advection                  61.066 ******           0.000     4.027
+  Multiphase_solve                       2.642 ******           0.000     0.174
+  Multiphase_redistance                 19.917 ******           0.000     1.313
+  IO_output                             25.543  29071           0.001     1.684
+   diagnostics                           0.019  29071           0.000     0.001
+   plotfile                              0.981     10           0.098     0.065
+    writePlotfile                        0.962     10           0.096     0.063
+  io                                    19.655  29071           0.001     1.296
+   diagnostics                           0.011  29071           0.000     0.001
+   checkpointing                         0.732      5           0.146     0.048
+    writeCheckpoint                      0.723      5           0.145     0.048
+ ==============================================================================
+ ==============================================================================
+ perf_summary: code performance summary statistics
+                      beginning : 07-15-2024  16:44:10
+                         ending : 07-15-2024  17:09:27
+   seconds in monitoring period :             1516.579
+      number of evolution steps :                29071
+ ------------------------------------------------------------------------------
+ accounting unit                  max/proc (s)  min/proc (s) avg/proc (s)   num calls
+ ------------------------------------------------------------------------------
+ initialization                          0.863         0.855        0.856           1
+  eos initNewLevel                       0.000         0.000        0.000           1
+  gr_multigridAmrexInit                  0.000         0.000        0.000           1
+  writeCheckpoint                        0.175         0.174        0.174           1
+  writePlotfile                          0.072         0.071        0.071           1
+   io_writeGrid                          0.007         0.000        0.001           1
+ writePlotfile                           0.084         0.083        0.083           1
+ evolution                            1515.633      1515.621     1515.631           1
+  guardcell internal                   341.674       162.826      204.693      406995
+   amr_guardcell                       341.415       162.409      204.280      406995
+    gc unk                             285.785       122.355      160.414      377924
+    gc facevars                         55.481        38.956       43.679       87214
+  Heater_mapSitesToProc                  0.009         0.009        0.009           1
+  Multiphase_reInitGridVars             17.227         4.832       14.352     2907100
+  IncompNS_reInitGridVars               47.927        12.144       39.947     2907100
+  HeatAD_reInitGridVars                 13.555         3.383       11.248     2907100
+  Heater_checkSites                      4.012         2.064        2.674     2907100
+  Heater_tagSites                        0.108         0.024        0.038       29071
+  Heater_lsReInit                        7.422         5.803        6.636     2907100
+  Multiphase_setFluidProps              54.623        35.627       49.801     2907100
+  Multiphase_setThermalProp              3.123         2.023        2.848     2907100
+  Multiphase_setPressureJum             11.530         5.701        9.811     2907100
+  Multiphase_thermalForcing             16.704         8.069       14.540     2907100
+  Multiphase_extrapFluxes               49.311        45.928       48.025    14535500
+  Multiphase_setMassFlux                 1.990         1.867        1.935     2907100
+  Outlet_setForcing                     92.954        90.541       92.168     2907100
+  IncompNS_advection                    11.215         7.980       10.330     2907100
+  IncompNS_diffusion                    11.676         6.242       10.473     2907100
+  IncompNS_predictor                    12.576         8.684       11.593     2907100
+  IncompNS_divergence                   10.605         5.569        9.232     5814200
+  Multiphase_divergence                 22.006         6.721       17.929     5814200
+  IncompNS_setupPoisson                 27.752        14.100       24.499     2907100
+  Grid_solvePoisson                    627.009       623.576      624.634       29071
+  IncompNS_corrector                    34.149         7.879       27.687     2907100
+  HeatAD_diffusion                       5.075         4.098        4.777     2907100
+  HeatAD_advection                      51.406        49.724       50.962     2907100
+  HeatAD_solve                           3.444         3.075        3.299     2907100
+  Multiphase_advection                  61.425        55.347       59.854     2907100
+  Multiphase_solve                       2.682         2.293        2.567     2907100
+  Multiphase_redistance                 19.988        19.477       19.685     5814200
+  IO_output                             25.861        25.543       25.819       29071
+   diagnostics                           0.022         0.019        0.020       29071
+   plotfile                              0.981         0.959        0.962          10
+    writePlotfile                        0.962         0.958        0.959          10
+  io                                    20.027        19.655       19.979       29071
+   diagnostics                           0.012         0.011        0.011       29071
+   checkpointing                         0.732         0.723        0.724           5
+    writeCheckpoint                      0.724         0.722        0.723           5
+ ==============================================================================
+ [ 07-15-2024  17:09:27.134 ] LOGFILE_END: FLASH run complete.
+ FLASH log file:  07-15-2024  19:03:01.807    Run number:  1
+ ==============================================================================
+ Number of MPI tasks:                 10
+ MPI version:                          3
+ MPI subversion:                       1
+ Dimensionality:                       2
+ Max Number of Blocks/Proc:          100
+ Number x zones:                      16
+ Number y zones:                      16
+ Number z zones:                       1
+ Setup stamp:     Mon Jul 15 16:21:13 2024
+ Build stamp:     Mon Jul 15 16:24:00 2024
+ System info:     Linux login-1.zaratan.umd.edu 4.18.0-513.5.1.el8_9.x86_64 #1 SMP Fri Sep 29 05:2
+ Version:         Flash-X 1.0 (heads/shanvach/incomp-heater-updates-0-g6a62ce97-dirty)            
+ Build directory: /scratch/zt1/project/ariaz-prj/user/svachhan/Flash-X-Demo/software/flashx/Flash-
+ Setup syntax:    /scratch/zt1/project/ariaz-prj/user/svachhan/Flash-X-Demo/software/flashx/Flash-X/bin/setup.py incompFlow/FlowBoiling -auto -maxblocks=100 -2d -nxb=16 -nyb=16 +amrex +parallelIO -site=/scratch/zt1/project/ariaz-prj/user/svachhan/Flash-X-Demo/sites/zaratan.umd.edu +incomp
+ f compiler flags: /cvmfs/hpcsw.umd.edu/spack-software/2022.06.15/linux-rhel8-zen2/gcc-9.4.0/openmpi-4.1.1-hm2fkyfi7d5ggq4hg2xn4dtzf2o5r2rx/bin/mpif90 -I/scratch/zt1/project/ariaz-prj/user/svachhan/Flash-X-Demo/software/amrex/AMReX/install-zaratan.umd.edu/2D/include -I/cvmfs/hpcsw.umd.edu/spack-software/2022.06.15/linux-rhel8-zen2/gcc-9.4.0/hdf5-1.10.7-fjan65etjt7gsfdld7em6n2jmsh5mhxi/include -DH5_USE_18_API -c -O3
+ c compiler flags:    /cvmfs/hpcsw.umd.edu/spack-software/2022.06.15/linux-rhel8-zen2/gcc-9.4.0/openmpi-4.1.1-hm2fkyfi7d5ggq4hg2xn4dtzf2o5r2rx/bin/mpicc -I/scratch/zt1/project/ariaz-prj/user/svachhan/Flash-X-Demo/software/amrex/AMReX/install-zaratan.umd.edu/2D/include -I/cvmfs/hpcsw.umd.edu/spack-software/2022.06.15/linux-rhel8-zen2/gcc-9.4.0/hdf5-1.10.7-fjan65etjt7gsfdld7em6n2jmsh5mhxi/include -DH5_USE_18_API -c -O3 -
+ ==============================================================================
+ Comment:  Flow Boiling problem
+ ==============================================================================
+ FLASH Units used:
+   Driver/DriverMain/Incomp
+   Grid/GridBoundaryConditions
+   Grid/GridMain/AMR/Amrex/Incomp
+   Grid/GridMain/AMR/Amrex/levelFlux
+   Grid/GridSolvers/AmrexMultigridSolver
+   IO/IOMain/hdf5/AM
+   IO/IOMain/hdf5/parallel/AM
+   IO/IOMain/hdf5/writeGrid/AM
+   PhysicalConstants/PhysicalConstantsMain
+   RuntimeParameters/RuntimeParametersMain
+   Simulation/SimulationMain/incompFlow/FlowBoiling
+   TimeAdvance/TimeAdvanceMain/StrangSplit
+   flashUtilities/contiguousConversion
+   flashUtilities/general
+   flashUtilities/interpolation/oneDim
+   flashUtilities/nameValueLL
+   flashUtilities/system/memoryUsage/legacy
+   monitors/Logfile/LogfileMain
+   monitors/Timers/TimersMain/MPINative
+   numericalTools/Stencils/StencilsAdvection
+   numericalTools/Stencils/StencilsDiffusion
+   numericalTools/Stencils/StencilsLevelset
+   numericalTools/Stencils/StencilsMain
+   numericalTools/Stencils/StencilsTemporal
+   physics/HeatAD/HeatADAdvection
+   physics/HeatAD/HeatADMain/varDiffusion
+   physics/IncompNS/IncompNSExtras
+   physics/IncompNS/IncompNSMain/varDens/presPoisson
+   physics/Multiphase/MultiphaseEvap
+   physics/Multiphase/MultiphaseMain
+   physics/sourceTerms/Heater/HeaterMain
+   physics/sourceTerms/Inlet/InletMain
+   physics/sourceTerms/Outlet/OutletMain/phaseForcing
+ ==============================================================================
+ RuntimeParameters:
+                                                                               
+ ==============================================================================
+bndpriorityone              =          1
+bndprioritythree            =          3
+bndprioritytwo              =          2
+checkpointfileintervalstep  =          0
+checkpointfilenumber        =          5 [CHANGED]
+dr_abortpause               =          2
+dr_dtminbelowaction         =          1
+drift_break_inst            =          0
+drift_trunc_mantissa        =          2
+drift_verbose_inst          =          0
+fileformatversion           =          9
+forcedplotfilenumber        =          0
+gr_amrexmg_cg_verbose       =          0
+gr_amrexmg_linop_maxorder   =          2
+gr_amrexmg_max_fmg_iter     =          0
+gr_amrexmg_max_grid_size    =         16
+gr_amrexmg_max_iter         =        200 [CHANGED]
+gr_amrexmg_max_level        =          1
+gr_amrexmg_n_cell           =         32
+gr_amrexmg_prob_type        =          1
+gr_amrexmg_ref_ratio        =          2
+gr_amrexmg_verbose          =          2
+gr_amrex_verbosity          =          1
+gr_lrefmaxtimevalue_1       =         -1
+gr_lrefmaxtimevalue_10      =         -1
+gr_lrefmaxtimevalue_11      =         -1
+gr_lrefmaxtimevalue_12      =         -1
+gr_lrefmaxtimevalue_13      =         -1
+gr_lrefmaxtimevalue_14      =         -1
+gr_lrefmaxtimevalue_15      =         -1
+gr_lrefmaxtimevalue_16      =         -1
+gr_lrefmaxtimevalue_17      =         -1
+gr_lrefmaxtimevalue_18      =         -1
+gr_lrefmaxtimevalue_19      =         -1
+gr_lrefmaxtimevalue_2       =         -1
+gr_lrefmaxtimevalue_20      =         -1
+gr_lrefmaxtimevalue_3       =         -1
+gr_lrefmaxtimevalue_4       =         -1
+gr_lrefmaxtimevalue_5       =         -1
+gr_lrefmaxtimevalue_6       =         -1
+gr_lrefmaxtimevalue_7       =         -1
+gr_lrefmaxtimevalue_8       =         -1
+gr_lrefmaxtimevalue_9       =         -1
+gr_restrictallmethod        =          3
+gr_sanitizedatamode         =          0
+gr_tilesizex                =         16
+gr_tilesizey                =         16
+gr_tilesizez                =          1
+ht_intschm                  =          2
+htr_annqueries              =          3
+htr_numheaters              =          2 [CHANGED]
+iprocs                      =          1
+ins_advschm                 =          2 [CHANGED]
+ins_cflflg                  =          1
+ins_intschm                 =          2
+ins_isgs                    =          0
+ins_velprolongmethod        =          1
+interpol_order              =          2
+jprocs                      =          1
+kprocs                      =          1
+lrefine_del                 =          0
+lrefine_max                 =          1
+lrefine_min                 =          1
+max_particles_per_blk       =        100
+memory_stat_freq            =     100000
+meshcopycount               =          1
+min_particles_per_blk       =          1
+mph_extpit                  =          5
+mph_lsit                    =          2
+nbegin                      =          1
+nblockx                     =        100 [CHANGED]
+nblocky                     =         10 [CHANGED]
+nblockz                     =          1
+nend                        =    1200000 [CHANGED]
+nrefs                       =   10000000 [CHANGED]
+nsteptotalsts               =          5
+outputsplitnum              =          1
+plotfileintervalstep        =          0
+plotfilenumber              =         12 [CHANGED]
+refine_var_count            =          4
+rolling_checkpoint          =        150 [CHANGED]
+sweeporder                  =        123
+wr_integrals_freq           =          1
+checkpointfileintervaltime  =                 0.100E+01
+checkpointfileintervalz     =                 0.180+309
+derefine_cutoff_1           =                 0.200E+00
+derefine_cutoff_2           =                 0.200E+00
+derefine_cutoff_3           =                 0.200E+00
+derefine_cutoff_4           =                 0.200E+00
+dr_dtmincontinue            =                 0.000E+00
+dr_tstepslowstartfactor     =                 0.100E+00
+dtinit                      =                 0.100E-03 [CHANGED]
+dtmax                       =                 0.400E-03 [CHANGED]
+dtmin                       =                 0.100E-09
+gr_amrexmg_tol              =                 0.100E-08 [CHANGED]
+gr_btworkchildscaling       =                 0.100E+01
+gr_btworkdefaultleaf        =                 0.200E+01
+gr_btworkdefaultpar         =                 0.100E+01
+gr_btworklbleaf             =                 0.000E+00
+gr_btworklbpar              =                 0.000E+00
+gr_btworkubleaf             =                 0.100E+07
+gr_btworkubpar              =                 0.100E+07
+gr_lrefinemaxredlogbase     =                 0.100E+02
+gr_lrefinemaxredradiusfact  =                 0.000E+00
+gr_lrefinemaxredtref        =                 0.000E+00
+gr_lrefinemaxredtimescale   =                 0.100E+01
+gr_lrefmaxtime_1            =                -0.100E+01
+gr_lrefmaxtime_10           =                -0.100E+01
+gr_lrefmaxtime_11           =                -0.100E+01
+gr_lrefmaxtime_12           =                -0.100E+01
+gr_lrefmaxtime_13           =                -0.100E+01
+gr_lrefmaxtime_14           =                -0.100E+01
+gr_lrefmaxtime_15           =                -0.100E+01
+gr_lrefmaxtime_16           =                -0.100E+01
+gr_lrefmaxtime_17           =                -0.100E+01
+gr_lrefmaxtime_18           =                -0.100E+01
+gr_lrefmaxtime_19           =                -0.100E+01
+gr_lrefmaxtime_2            =                -0.100E+01
+gr_lrefmaxtime_20           =                -0.100E+01
+gr_lrefmaxtime_3            =                -0.100E+01
+gr_lrefmaxtime_4            =                -0.100E+01
+gr_lrefmaxtime_5            =                -0.100E+01
+gr_lrefmaxtime_6            =                -0.100E+01
+gr_lrefmaxtime_7            =                -0.100E+01
+gr_lrefmaxtime_8            =                -0.100E+01
+gr_lrefmaxtime_9            =                -0.100E+01
+ht_nusselt                  =                 0.100E+01
+ht_prandtl                  =                 0.840E+01 [CHANGED]
+ht_tbulk                    =                 0.000E+00
+ht_twall_high               =                 0.100E+01
+ht_twall_low                =                 0.000E+00
+htr_nucseedradius           =                 0.100E+00
+in_buffer                   =                 0.100E+01
+in_growthrate               =                 0.400E+01
+in_sink                     =                -0.100E+01
+ins_cfl                     =                 0.500E-01 [CHANGED]
+ins_dpdx                    =                 0.000E+00
+ins_dpdy                    =                 0.000E+00
+ins_dpdz                    =                 0.000E+00
+ins_dtspec                  =                 0.100E-03 [CHANGED]
+ins_gravx                   =                 0.000E+00
+ins_gravy                   =                -0.100E+01 [CHANGED]
+ins_gravz                   =                 0.000E+00
+ins_inflowvelscale          =                 0.100E+01
+ins_invreynolds             =                 0.420E-02 [CHANGED]
+ins_sigma                   =                 0.500E-01 [CHANGED]
+mph_cpgas                   =                 0.830E+00 [CHANGED]
+mph_stefan                  =                 0.530E+00 [CHANGED]
+mph_tsat                    =                 0.150E+00 [CHANGED]
+mph_ipropsmear              =                 0.150E+01 [CHANGED]
+mph_invweber                =                 0.100E+01
+mph_mugas                   =                 0.100E+01
+mph_rhogas                  =                 0.830E-02 [CHANGED]
+mph_thcogas                 =                 0.250E+00 [CHANGED]
+nusts                       =                 0.100E+00
+out_buffer                  =                 0.200E+01 [CHANGED]
+out_growthrate              =                 0.400E+01
+out_sink                    =                -0.100E+01
+out_velrefscale             =                 0.100E+01
+plotfileintervaltime        =                 0.500E+00 [CHANGED]
+plotfileintervalz           =                 0.180+309
+refine_cutoff_1             =                 0.800E+00
+refine_cutoff_2             =                 0.800E+00
+refine_cutoff_3             =                 0.800E+00
+refine_cutoff_4             =                 0.800E+00
+refine_filter_1             =                 0.100E-01
+refine_filter_2             =                 0.100E-01
+refine_filter_3             =                 0.100E-01
+refine_filter_4             =                 0.100E-01
+rss_limit                   =                -0.100E+01
+sim_lengthscalemeters       =                 0.100E-02 [CHANGED]
+sim_timescaleseconds        =                 0.100E-01 [CHANGED]
+small                       =                 0.100E-09
+smalle                      =                 0.100E-09
+smallp                      =                 0.100E-09
+smallt                      =                 0.100E-09
+smallu                      =                 0.100E-09
+smallx                      =                 0.100E-09
+smlrho                      =                 0.100E-09
+tinitial                    =                 0.000E+00
+tmax                        =                 0.150E+02 [CHANGED]
+tstep_change_factor         =                 0.101E+01 [CHANGED]
+wall_clock_checkpoint       =                 0.432E+05
+wall_clock_time_limit       =                -0.100E+01 [CHANGED]
+x_refine_center             =                 0.000E+00
+xmax                        =                 0.250E+02 [CHANGED]
+xmin                        =                -0.250E+02 [CHANGED]
+y_refine_center             =                 0.000E+00
+ymax                        =                 0.500E+01 [CHANGED]
+ymin                        =                 0.000E+00
+zfinal                      =                 0.000E+00
+zinitial                    =                -0.100E+01
+z_refine_center             =                 0.000E+00
+zmax                        =                 0.100E+01
+zmin                        =                 0.000E+00
+amrexfaceinterpolator       = FACE_LINEAR                   
+amrexinterpolator           = CELL_CONSERVATIVE_LINEAR      
+basenm                      = INS_Flow_Boiling_              [CHANGED]
+eosmode                     = dens_ie                       
+eosmodeinit                 = dens_ie                       
+geometry                    = cartesian                     
+grav_boundary_type          = isolated                      
+htr_heatername              = flow_boiling                   [CHANGED]
+log_file                    = INS_Flow_Boiling.log           [CHANGED]
+output_directory            =                               
+pc_unitsbase                = CGS                           
+plot_grid_var_1             = none                          
+plot_grid_var_10            = none                          
+plot_grid_var_11            = none                          
+plot_grid_var_12            = none                          
+plot_grid_var_13            = none                          
+plot_grid_var_14            = none                          
+plot_grid_var_15            = none                          
+plot_grid_var_16            = none                          
+plot_grid_var_17            = none                          
+plot_grid_var_18            = none                          
+plot_grid_var_19            = none                          
+plot_grid_var_2             = none                          
+plot_grid_var_20            = none                          
+plot_grid_var_21            = none                          
+plot_grid_var_22            = none                          
+plot_grid_var_23            = none                          
+plot_grid_var_24            = none                          
+plot_grid_var_25            = none                          
+plot_grid_var_26            = none                          
+plot_grid_var_27            = none                          
+plot_grid_var_28            = none                          
+plot_grid_var_29            = none                          
+plot_grid_var_3             = none                          
+plot_grid_var_30            = none                          
+plot_grid_var_31            = none                          
+plot_grid_var_32            = none                          
+plot_grid_var_33            = none                          
+plot_grid_var_34            = none                          
+plot_grid_var_35            = none                          
+plot_grid_var_36            = none                          
+plot_grid_var_37            = none                          
+plot_grid_var_38            = none                          
+plot_grid_var_39            = none                          
+plot_grid_var_4             = none                          
+plot_grid_var_40            = none                          
+plot_grid_var_41            = none                          
+plot_grid_var_42            = none                          
+plot_grid_var_43            = none                          
+plot_grid_var_44            = none                          
+plot_grid_var_45            = none                          
+plot_grid_var_46            = none                          
+plot_grid_var_47            = none                          
+plot_grid_var_48            = none                          
+plot_grid_var_49            = none                          
+plot_grid_var_5             = none                          
+plot_grid_var_50            = none                          
+plot_grid_var_51            = none                          
+plot_grid_var_52            = none                          
+plot_grid_var_53            = none                          
+plot_grid_var_54            = none                          
+plot_grid_var_55            = none                          
+plot_grid_var_56            = none                          
+plot_grid_var_57            = none                          
+plot_grid_var_58            = none                          
+plot_grid_var_59            = none                          
+plot_grid_var_6             = none                          
+plot_grid_var_60            = none                          
+plot_grid_var_61            = none                          
+plot_grid_var_62            = none                          
+plot_grid_var_63            = none                          
+plot_grid_var_64            = none                          
+plot_grid_var_65            = none                          
+plot_grid_var_66            = none                          
+plot_grid_var_67            = none                          
+plot_grid_var_68            = none                          
+plot_grid_var_69            = none                          
+plot_grid_var_7             = none                          
+plot_grid_var_70            = none                          
+plot_grid_var_71            = none                          
+plot_grid_var_72            = none                          
+plot_grid_var_73            = none                          
+plot_grid_var_74            = none                          
+plot_grid_var_75            = none                          
+plot_grid_var_76            = none                          
+plot_grid_var_77            = none                          
+plot_grid_var_78            = none                          
+plot_grid_var_8             = none                          
+plot_grid_var_9             = none                          
+plot_var_1                  = pres                           [CHANGED]
+plot_var_10                 = none                          
+plot_var_11                 = none                          
+plot_var_12                 = none                          
+plot_var_13                 = none                          
+plot_var_14                 = none                          
+plot_var_15                 = none                          
+plot_var_16                 = none                          
+plot_var_17                 = none                          
+plot_var_18                 = none                          
+plot_var_19                 = none                          
+plot_var_2                  = velx                           [CHANGED]
+plot_var_20                 = none                          
+plot_var_21                 = none                          
+plot_var_22                 = none                          
+plot_var_23                 = none                          
+plot_var_24                 = none                          
+plot_var_25                 = none                          
+plot_var_3                  = vely                           [CHANGED]
+plot_var_4                  = dfun                           [CHANGED]
+plot_var_5                  = temp                           [CHANGED]
+plot_var_6                  = none                          
+plot_var_7                  = none                          
+plot_var_8                  = none                          
+plot_var_9                  = none                          
+prof_file                   = profile.dat                   
+refine_var_1                = none                          
+refine_var_2                = none                          
+refine_var_3                = none                          
+refine_var_4                = none                          
+run_comment                 = Flow Boiling problem           [CHANGED]
+run_number                  = 1                             
+stats_file                  = flashx.dat                    
+xl_boundary_type            = inflow_ins                     [CHANGED]
+xr_boundary_type            = outflow_ins                    [CHANGED]
+yl_boundary_type            = noslip_ins                     [CHANGED]
+yr_boundary_type            = noslip_ins                     [CHANGED]
+zl_boundary_type            = periodic                      
+zr_boundary_type            = periodic                      
+csvsummaryallprocs          =  F
+logsummaryallprocs          =  F
+allowdtstsdominate          =  F
+alwayscomputeuservars       =  T
+alwaysrestrictcheckpoint    =  T
+chkguardcellsinput          =  F
+chkguardcellsoutput         =  F
+converttoconsvdformeshcalls =  F
+converttoconsvdinmeshinterp =  F
+corners                     =  F
+dr_printtsteploc            =  T
+dr_rununittest              =  F
+dr_shortenlaststepbeforetmax =  F
+drift_tuples                =  F
+eachprocwritesownabortlog   =  F
+eachprocwritessummary       =  F
+earlyblockdistadjustment    =  T
+enablemaskedgcfill          =  T
+flux_correct                =  T
+flux_correct_perlevel       =  T
+geometryoverride            =  F
+gr_amrexmg_agglomeration    =  T
+gr_amrexmg_composite_solve  =  T [CHANGED]
+gr_amrexmg_consolidation    =  T
+gr_amrexusebittree          =  F
+gr_bcenableapplymixedgds    =  F
+gr_bndgcfillneedsprimitivevars =  F
+gr_btcustomwork             =  F
+gr_btexchangework           =  F
+gr_btsortbywork             =  T
+gr_enabletiling             =  F
+gr_gcfillsinglevarrange     =  F
+gr_lrefinemaxbytime         =  F
+gr_lrefinemaxreddobylogr    =  F
+gr_lrefinemaxreddobytime    =  F
+gr_usetiling                =  F
+htr_showinfo                =  F
+ignoreforcedplot            =  T [CHANGED]
+ins_pressurecorrect         =  F [CHANGED]
+io_plotfileamrexformat      =  F
+io_writemscalarintegrals    =  F
+plotfilegridquantitydp      =  F
+plotfilemetadatadp          =  F
+reducegcellfills            =  F
+refine_on_particle_count    =  F
+restart                     =  T [CHANGED]
+summaryoutputonly           =  F
+threadblocklistbuild        =  F
+threaddelepblocklist        =  F
+threaddelepwithinblock      =  F
+threaddriverblocklist       =  F
+threaddriverwithinblock     =  F
+threadraytracebuild         =  F
+threadwithinblockbuild      =  F
+tmr_suppressinparallel      =  F
+typematchedxfer             =  T
+unbiased_geometry           =  F
+useburn                     =  F
+usecollectivehdf5           =  T
+usedeleptonize              =  F
+usegravity                  =  F
+useheatad                   =  T
+useheater                   =  T
+usehydro                    =  F
+useimbound                  =  F
+useincompns                 =  T
+useinlet                    =  T
+uselegacylabels             =  T
+usemultiphase               =  T
+useoutlet                   =  T
+useparticles                =  F
+useradtrans                 =  F
+usests                      =  F
+usestsfordiffusion          =  F
+usesolidmechanics           =  F
+writestatsummary            =  T
+                                                                               
+ ==============================================================================
+                                                                               
+ Known units of measurement:
+                                                                               
+              Unit                          CGS Value                Base Unit
+  1                  cm                     1.0000                           cm
+  2                   s                     1.0000                            s
+  3                   g                     1.0000                            g
+  4                   K                     1.0000                            K
+  5                 esu                     1.0000                          esu
+  6                 mol                     1.0000                          mol
+  7                   m                     100.00                           cm
+  8                  km                    1.00000E+05                       cm
+  9                  pc                    3.08568E+18                       cm
+ 10                 kpc                    3.08568E+21                       cm
+ 11                 Mpc                    3.08568E+24                       cm
+ 12                 Gpc                    3.08568E+27                       cm
+ 13                Rsun                    6.96000E+10                       cm
+ 14                  AU                    1.49598E+13                       cm
+ 15                  yr                    3.15569E+07                        s
+ 16                 Myr                    3.15569E+13                        s
+ 17                 Gyr                    3.15569E+16                        s
+ 18                  kg                     1000.0                            g
+ 19                Msun                    1.98892E+33                        g
+ 20                 amu                    1.66054E-24                        g
+ 21                  eV                     11605.                            K
+ 22                   C                    2.99792E+09                      esu
+ 23                LFLY                    3.08568E+24                       cm
+ 24                TFLY                    2.05759E+17                        s
+ 25                MFLY                    9.88470E+45                        g
+ 26            clLength                    3.08568E+24                       cm
+ 27              clTime                    3.15569E+16                        s
+ 28              clMass                    1.98892E+48                        g
+ 29              clTemp                    1.16045E+07                        K
+-----------End of Units--------------------
+                                                                               
+ Known physical constants:
+                                                                               
+    Constant Name       Constant Value   cm       s        g        K        esu      mol
+  1              Newton    6.67408E-08   3.0     -2.0     -1.0      0.0      0.0      0.0    
+  2      speed of light    2.99792E+10   1.0     -1.0      0.0      0.0      0.0      0.0    
+  3              Planck    6.62607E-27   2.0     -1.0      1.0      0.0      0.0      0.0    
+  4     electron charge    4.80320E-10   0.0      0.0      0.0      0.0      1.0      0.0    
+  5       electron mass    9.10938E-28   0.0      0.0      1.0      0.0      0.0      0.0    
+  6         proton mass    1.67262E-24   0.0      0.0      1.0      0.0      0.0      0.0    
+  7      fine-structure    7.29735E-03   0.0      0.0      0.0      0.0      0.0      0.0    
+  8            Avogadro    6.02214E+23   0.0      0.0      0.0      0.0      0.0     -1.0    
+  9           Boltzmann    1.38065E-16   2.0     -2.0      1.0     -1.0      0.0      0.0    
+ 10  ideal gas constant    8.31446E+07   2.0     -2.0      1.0     -1.0      0.0     -1.0    
+ 11                Wien    0.28978       1.0      0.0      0.0      1.0      0.0      0.0    
+ 12    Stefan-Boltzmann    5.67037E-05   0.0     -3.0      1.0     -4.0      0.0      0.0    
+ 13  Radiation Constant    7.56572E-15  -1.0     -2.0      1.0     -4.0      0.0      0.0    
+ 14                  pi     3.1416       0.0      0.0      0.0      0.0      0.0      0.0    
+ 15                   e     2.7183       0.0      0.0      0.0      0.0      0.0      0.0    
+ 16               Euler    0.57722       0.0      0.0      0.0      0.0      0.0      0.0    
+ ==============================================================================
+                                                                               
+ Multifluid database: not configured in
+                                                                               
+ ==============================================================================
+ [ 07-15-2024  19:03:01.868 ] [gr_initGeometry] checking BCs for idir: 1
+ [ 07-15-2024  19:03:01.869 ] [gr_initGeometry] checking BCs for idir: 2
+ [ 07-15-2024  19:03:01.870 ] [gr_amrexInit]: AMREX_GIT_VERSION=23.11
+ WARNING : Adaptive Grid did not find any variable to refine
+ [ 07-15-2024  19:03:02.464 ] memory: /proc vsize    (MB):      389.57 (min)      14385.14 (max)       7139.73 (avg)
+ [ 07-15-2024  19:03:02.465 ] memory: /proc rss      (MB):       97.13 (min)         99.85 (max)         97.90 (avg)
+ [ 07-15-2024  19:03:02.466 ] [io_readData] file opened: type=checkpoint name=INS_Flow_Boiling_hdf5_chk_0005
+ [ 07-15-2024  19:03:03.926 ] [io_readData] file_closed: type=checkpoint name=INS_Flow_Boiling_hdf5_chk_0005
+ [ 07-15-2024  19:03:03.933 ] memory: /proc vsize    (MB):      410.69 (min)      14402.16 (max)       7164.11 (avg)
+ [ 07-15-2024  19:03:03.934 ] memory: /proc rss      (MB):      115.73 (min)        135.93 (max)        118.25 (avg)
+ [ 07-15-2024  19:03:03.935 ] memory: /proc vsize    (MB):      410.69 (min)      14402.16 (max)       7164.11 (avg)
+ [ 07-15-2024  19:03:03.935 ] memory: /proc rss      (MB):      115.73 (min)        135.93 (max)        118.25 (avg)
+ [ 07-15-2024  19:03:03.981 ] [IO_writePlotfile] open: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0012
+ [ 07-15-2024  19:03:04.005 ] [io_writeData]: wrote    1000          blocks
+ [ 07-15-2024  19:03:04.014 ] [IO_writePlotfile] close: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0012
+ [ 07-15-2024  19:03:04.014 ] memory: /proc vsize    (MB):      414.79 (min)      14406.25 (max)       7170.00 (avg)
+ [ 07-15-2024  19:03:04.015 ] memory: /proc rss      (MB):      115.97 (min)        137.87 (max)        118.67 (avg)
+ [ 07-15-2024  19:03:04.016 ] [Driver_evolveAll]: Entering evolution loop
+ [ 07-15-2024  19:03:04.017 ] [Driver_evolveAll] start-time: 5.0000411933245E+00
+ [ 07-15-2024  19:05:26.757 ] [IO_writePlotfile] open: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0013
+ [ 07-15-2024  19:05:26.785 ] [io_writeData]: wrote    1000          blocks
+ [ 07-15-2024  19:05:26.788 ] [IO_writePlotfile] close: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0013
+ [ 07-15-2024  19:08:06.404 ] [IO_writePlotfile] open: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0014
+ [ 07-15-2024  19:08:06.439 ] [io_writeData]: wrote    1000          blocks
+ [ 07-15-2024  19:08:06.443 ] [IO_writePlotfile] close: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0014
+ [ 07-15-2024  19:08:06.502 ] [IO_writeCheckpoint] open: type=checkpoint name=INS_Flow_Boiling_hdf5_chk_0006
+ [ 07-15-2024  19:08:06.614 ] [io_writeData]: wrote    1000          blocks
+ [ 07-15-2024  19:08:06.624 ] [IO_writeCheckpoint] close: type=checkpoint name=INS_Flow_Boiling_hdf5_chk_0006
+ [ 07-15-2024  19:10:44.667 ] [IO_writePlotfile] open: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0015
+ [ 07-15-2024  19:10:44.693 ] [io_writeData]: wrote    1000          blocks
+ [ 07-15-2024  19:10:44.697 ] [IO_writePlotfile] close: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0015
+ [ 07-15-2024  19:13:27.409 ] [IO_writePlotfile] open: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0016
+ [ 07-15-2024  19:13:27.436 ] [io_writeData]: wrote    1000          blocks
+ [ 07-15-2024  19:13:27.443 ] [IO_writePlotfile] close: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0016
+ [ 07-15-2024  19:13:27.490 ] [IO_writeCheckpoint] open: type=checkpoint name=INS_Flow_Boiling_hdf5_chk_0007
+ [ 07-15-2024  19:13:27.607 ] [io_writeData]: wrote    1000          blocks
+ [ 07-15-2024  19:13:27.615 ] [IO_writeCheckpoint] close: type=checkpoint name=INS_Flow_Boiling_hdf5_chk_0007
+ [ 07-15-2024  19:16:10.581 ] [IO_writePlotfile] open: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0017
+ [ 07-15-2024  19:16:10.611 ] [io_writeData]: wrote    1000          blocks
+ [ 07-15-2024  19:16:10.616 ] [IO_writePlotfile] close: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0017
+ [ 07-15-2024  19:19:04.207 ] [IO_writePlotfile] open: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0018
+ [ 07-15-2024  19:19:04.236 ] [io_writeData]: wrote    1000          blocks
+ [ 07-15-2024  19:19:04.248 ] [IO_writePlotfile] close: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0018
+ [ 07-15-2024  19:19:04.334 ] [IO_writeCheckpoint] open: type=checkpoint name=INS_Flow_Boiling_hdf5_chk_0008
+ [ 07-15-2024  19:19:04.449 ] [io_writeData]: wrote    1000          blocks
+ [ 07-15-2024  19:19:04.462 ] [IO_writeCheckpoint] close: type=checkpoint name=INS_Flow_Boiling_hdf5_chk_0008
+ [ 07-15-2024  19:22:04.002 ] [IO_writePlotfile] open: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0019
+ [ 07-15-2024  19:22:04.043 ] [io_writeData]: wrote    1000          blocks
+ [ 07-15-2024  19:22:04.062 ] [IO_writePlotfile] close: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0019
+ [ 07-15-2024  19:25:02.868 ] [IO_writePlotfile] open: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0020
+ [ 07-15-2024  19:25:02.893 ] [io_writeData]: wrote    1000          blocks
+ [ 07-15-2024  19:25:02.897 ] [IO_writePlotfile] close: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0020
+ [ 07-15-2024  19:25:02.962 ] [IO_writeCheckpoint] open: type=checkpoint name=INS_Flow_Boiling_hdf5_chk_0009
+ [ 07-15-2024  19:25:03.069 ] [io_writeData]: wrote    1000          blocks
+ [ 07-15-2024  19:25:03.075 ] [IO_writeCheckpoint] close: type=checkpoint name=INS_Flow_Boiling_hdf5_chk_0009
+ [ 07-15-2024  19:28:02.537 ] [IO_writePlotfile] open: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0021
+ [ 07-15-2024  19:28:02.561 ] [io_writeData]: wrote    1000          blocks
+ [ 07-15-2024  19:28:02.565 ] [IO_writePlotfile] close: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0021
+ [ 07-15-2024  19:30:57.409 ] [IO_writePlotfile] open: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0022
+ [ 07-15-2024  19:30:57.434 ] [io_writeData]: wrote    1000          blocks
+ [ 07-15-2024  19:30:57.444 ] [IO_writePlotfile] close: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0022
+ [ 07-15-2024  19:30:57.518 ] [IO_writeCheckpoint] open: type=checkpoint name=INS_Flow_Boiling_hdf5_chk_0010
+ [ 07-15-2024  19:30:57.636 ] [io_writeData]: wrote    1000          blocks
+ [ 07-15-2024  19:30:57.642 ] [IO_writeCheckpoint] close: type=checkpoint name=INS_Flow_Boiling_hdf5_chk_0010
+ [ 07-15-2024  19:33:54.579 ] [IO_writePlotfile] open: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0023
+ [ 07-15-2024  19:33:54.612 ] [io_writeData]: wrote    1000          blocks
+ [ 07-15-2024  19:33:54.625 ] [IO_writePlotfile] close: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0023
+ [ 07-15-2024  19:36:58.524 ] [IO_writePlotfile] open: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0024
+ [ 07-15-2024  19:36:58.551 ] [io_writeData]: wrote    1000          blocks
+ [ 07-15-2024  19:36:58.555 ] [IO_writePlotfile] close: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0024
+ [ 07-15-2024  19:36:58.608 ] [IO_writeCheckpoint] open: type=checkpoint name=INS_Flow_Boiling_hdf5_chk_0011
+ [ 07-15-2024  19:36:58.720 ] [io_writeData]: wrote    1000          blocks
+ [ 07-15-2024  19:36:58.726 ] [IO_writeCheckpoint] close: type=checkpoint name=INS_Flow_Boiling_hdf5_chk_0011
+ [ 07-15-2024  19:39:59.520 ] [IO_writePlotfile] open: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0025
+ [ 07-15-2024  19:39:59.557 ] [io_writeData]: wrote    1000          blocks
+ [ 07-15-2024  19:39:59.576 ] [IO_writePlotfile] close: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0025
+ [ 07-15-2024  19:42:54.853 ] [IO_writePlotfile] open: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0026
+ [ 07-15-2024  19:42:54.878 ] [io_writeData]: wrote    1000          blocks
+ [ 07-15-2024  19:42:54.881 ] [IO_writePlotfile] close: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0026
+ [ 07-15-2024  19:42:54.922 ] [IO_writeCheckpoint] open: type=checkpoint name=INS_Flow_Boiling_hdf5_chk_0012
+ [ 07-15-2024  19:42:55.028 ] [io_writeData]: wrote    1000          blocks
+ [ 07-15-2024  19:42:55.035 ] [IO_writeCheckpoint] close: type=checkpoint name=INS_Flow_Boiling_hdf5_chk_0012
+ [ 07-15-2024  19:45:50.620 ] [IO_writePlotfile] open: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0027
+ [ 07-15-2024  19:45:50.643 ] [io_writeData]: wrote    1000          blocks
+ [ 07-15-2024  19:45:50.647 ] [IO_writePlotfile] close: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0027
+ [ 07-15-2024  19:48:45.491 ] [IO_writePlotfile] open: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0028
+ [ 07-15-2024  19:48:45.514 ] [io_writeData]: wrote    1000          blocks
+ [ 07-15-2024  19:48:45.520 ] [IO_writePlotfile] close: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0028
+ [ 07-15-2024  19:48:45.797 ] [IO_writeCheckpoint] open: type=checkpoint name=INS_Flow_Boiling_hdf5_chk_0013
+ [ 07-15-2024  19:48:45.897 ] [io_writeData]: wrote    1000          blocks
+ [ 07-15-2024  19:48:45.920 ] [IO_writeCheckpoint] close: type=checkpoint name=INS_Flow_Boiling_hdf5_chk_0013
+ [ 07-15-2024  19:52:01.303 ] [IO_writePlotfile] open: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0029
+ [ 07-15-2024  19:52:01.329 ] [io_writeData]: wrote    1000          blocks
+ [ 07-15-2024  19:52:01.333 ] [IO_writePlotfile] close: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0029
+ [ 07-15-2024  19:55:17.387 ] [IO_writePlotfile] open: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0030
+ [ 07-15-2024  19:55:17.421 ] [io_writeData]: wrote    1000          blocks
+ [ 07-15-2024  19:55:17.442 ] [IO_writePlotfile] close: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0030
+ [ 07-15-2024  19:55:17.766 ] [IO_writeCheckpoint] open: type=checkpoint name=INS_Flow_Boiling_hdf5_chk_0014
+ [ 07-15-2024  19:55:17.878 ] [io_writeData]: wrote    1000          blocks
+ [ 07-15-2024  19:55:17.899 ] [IO_writeCheckpoint] close: type=checkpoint name=INS_Flow_Boiling_hdf5_chk_0014
+ [ 07-15-2024  19:58:27.426 ] [IO_writePlotfile] open: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0031
+ [ 07-15-2024  19:58:27.452 ] [io_writeData]: wrote    1000          blocks
+ [ 07-15-2024  19:58:27.460 ] [IO_writePlotfile] close: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0031
+ [ 07-15-2024  20:01:30.310 ] [IO_writePlotfile] open: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0032
+ [ 07-15-2024  20:01:30.338 ] [io_writeData]: wrote    1000          blocks
+ [ 07-15-2024  20:01:30.351 ] [IO_writePlotfile] close: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0032
+ [ 07-15-2024  20:01:30.460 ] [IO_writeCheckpoint] open: type=checkpoint name=INS_Flow_Boiling_hdf5_chk_0015
+ [ 07-15-2024  20:01:30.567 ] [io_writeData]: wrote    1000          blocks
+ [ 07-15-2024  20:01:30.579 ] [IO_writeCheckpoint] close: type=checkpoint name=INS_Flow_Boiling_hdf5_chk_0015
+ [ 07-15-2024  20:01:30.583 ] [Driver_evolveAll] end-time: 1.5000129457721E+01
+ [ 07-15-2024  20:01:30.585 ] [Driver_evolveAll]: Exiting evolution loop
+ [ 07-15-2024  20:01:30.672 ] [IO_writePlotfile] open: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0033
+ [ 07-15-2024  20:01:30.698 ] [io_writeData]: wrote    1000          blocks
+ [ 07-15-2024  20:01:30.710 ] [IO_writePlotfile] close: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0033
+ [ 07-15-2024  20:01:30.723 ] memory: /proc vsize    (MB):      430.38 (min)      14421.66 (max)       7188.00 (avg)
+ [ 07-15-2024  20:01:30.737 ] memory: /proc rss      (MB):      125.33 (min)        141.33 (max)        129.57 (avg)
+ ==============================================================================
+ perf_summary: code performance summary for process            0
+                      beginning : 07-15-2024  19:03:01
+                         ending : 07-15-2024  20:01:30
+   seconds in monitoring period :             3508.935
+      number of evolution steps :                64363
+ ------------------------------------------------------------------------------
+ accounting unit                       time sec  num calls   secs avg  time pct
+ ------------------------------------------------------------------------------
+ initialization                          2.209      1           2.209     0.063
+  IO_readCheckpoint                      1.461      1           1.461     0.042
+  gr_multigridAmrexInit                  0.000      1           0.000     0.000
+  writePlotfile                          0.077      1           0.077     0.002
+   io_writeGrid                          0.006      1           0.006     0.000
+ writePlotfile                           0.123      1           0.123     0.003
+ evolution                            3506.564      1        3506.564    99.932
+  guardcell internal                   400.933 901083           0.000    11.426
+   amr_guardcell                       399.901 901083           0.000    11.397
+    gc unk                             311.699 836720           0.000     8.883
+    gc facevars                         87.704 193090           0.000     2.499
+  Heater_mapSitesToProc                  0.009      1           0.009     0.000
+  Multiphase_reInitGridVars             34.279 ******           0.000     0.977
+  IncompNS_reInitGridVars               96.476 ******           0.000     2.749
+  HeatAD_reInitGridVars                 28.451 ******           0.000     0.811
+  Heater_checkSites                      5.885 ******           0.000     0.168
+  Heater_tagSites                        0.195  64363           0.000     0.006
+  Heater_lsReInit                       16.003 ******           0.000     0.456
+  Multiphase_setFluidProps             110.053 ******           0.000     3.136
+  Multiphase_setThermalProp              6.080 ******           0.000     0.173
+  Multiphase_setPressureJum             23.417 ******           0.000     0.667
+  Multiphase_thermalForcing             33.576 ******           0.000     0.957
+  Multiphase_extrapFluxes              105.234 ******           0.000     2.999
+  Multiphase_setMassFlux                 4.281 ******           0.000     0.122
+  Outlet_setForcing                    201.369 ******           0.000     5.739
+  IncompNS_advection                    22.710 ******           0.000     0.647
+  IncompNS_diffusion                    24.000 ******           0.000     0.684
+  IncompNS_predictor                    25.284 ******           0.000     0.721
+  IncompNS_divergence                   19.202 ******           0.000     0.547
+  Multiphase_divergence                 41.932 ******           0.000     1.195
+  IncompNS_setupPoisson                 60.364 ******           0.000     1.720
+  Grid_solvePoisson                   1356.801  64363           0.021    38.667
+  IncompNS_corrector                    70.436 ******           0.000     2.007
+  HeatAD_diffusion                       9.982 ******           0.000     0.284
+  HeatAD_advection                     113.172 ******           0.000     3.225
+  HeatAD_solve                           7.035 ******           0.000     0.200
+  Multiphase_advection                 130.968 ******           0.000     3.732
+  Multiphase_solve                       5.460 ******           0.000     0.156
+  Multiphase_redistance                 43.601 ******           0.000     1.243
+  IO_output                            151.943  64363           0.002     4.330
+   diagnostics                           0.042  64363           0.000     0.001
+   plotfile                              3.462     20           0.173     0.099
+    writePlotfile                        3.387     20           0.169     0.097
+  io                                   133.406  64363           0.002     3.802
+   diagnostics                           0.023  64363           0.000     0.001
+   checkpointing                         2.330     10           0.233     0.066
+    writeCheckpoint                      2.284     10           0.228     0.065
+ ==============================================================================
+ ==============================================================================
+ perf_summary: code performance summary statistics
+                      beginning : 07-15-2024  19:03:01
+                         ending : 07-15-2024  20:01:30
+   seconds in monitoring period :             3508.935
+      number of evolution steps :                64363
+ ------------------------------------------------------------------------------
+ accounting unit                  max/proc (s)  min/proc (s) avg/proc (s)   num calls
+ ------------------------------------------------------------------------------
+ initialization                          2.209         2.207        2.208           1
+  IO_readCheckpoint                      1.465         1.461        1.463           1
+  gr_multigridAmrexInit                  0.000         0.000        0.000           1
+  writePlotfile                          0.077         0.077        0.077           1
+   io_writeGrid                          0.006         0.000        0.001           1
+ writePlotfile                           0.123         0.120        0.120           1
+ evolution                            3506.567      3506.564     3506.567           1
+  guardcell internal                   757.060       365.731      452.005      901083
+   amr_guardcell                       756.509       364.837      451.140      901083
+    gc unk                             634.689       274.554      355.096      836720
+    gc facevars                        121.504        86.503       95.620      193090
+  Heater_mapSitesToProc                  0.009         0.009        0.009           1
+  Multiphase_reInitGridVars             38.222        10.762       32.110     6436300
+  IncompNS_reInitGridVars              107.057        27.438       89.681     6436300
+  HeatAD_reInitGridVars                 30.740         8.037       25.883     6436300
+  Heater_checkSites                      6.864         4.541        5.890     6436300
+  Heater_tagSites                        0.195         0.053        0.074       64363
+  Heater_lsReInit                       16.003        13.013       14.630     6436300
+  Multiphase_setFluidProps             120.850        81.078      110.626     6436300
+  Multiphase_setThermalProp              6.647         4.640        6.166     6436300
+  Multiphase_setPressureJum             27.588        12.761       23.058     6436300
+  Multiphase_thermalForcing             36.749        17.862       32.265     6436300
+  Multiphase_extrapFluxes              109.616       100.800      106.670    32181500
+  Multiphase_setMassFlux                 4.348         4.086        4.256     6436300
+  Outlet_setForcing                    207.684       199.820      204.480     6436300
+  IncompNS_advection                    24.458        17.545       22.405     6436300
+  IncompNS_diffusion                    26.184        14.392       23.517     6436300
+  IncompNS_predictor                    28.148        19.426       25.680     6436300
+  IncompNS_divergence                   22.575        12.185       19.733    12872600
+  Multiphase_divergence                 47.976        15.064       39.156    12872600
+  IncompNS_setupPoisson                 60.795        30.900       54.646     6436300
+  Grid_solvePoisson                   1356.801      1346.838     1350.378       64363
+  IncompNS_corrector                    75.729        19.018       61.265     6436300
+  HeatAD_diffusion                      11.304         9.066       10.633     6436300
+  HeatAD_advection                     113.690       110.197      112.724     6436300
+  HeatAD_solve                           7.541         6.722        7.270     6436300
+  Multiphase_advection                 134.234       122.811      131.314     6436300
+  Multiphase_solve                       5.870         4.924        5.573     6436300
+  Multiphase_redistance                 43.727        43.084       43.505    12872600
+  IO_output                            152.566       151.943      152.491       64363
+   diagnostics                           0.052         0.039        0.046       64363
+   plotfile                              3.462         3.374        3.385          20
+    writePlotfile                        3.387         3.373        3.376          20
+  io                                   134.259       133.406      134.157       64363
+   diagnostics                           0.024         0.023        0.023       64363
+   checkpointing                         2.330         2.285        2.291          10
+    writeCheckpoint                      2.293         2.284        2.285          10
+ ==============================================================================
+ [ 07-15-2024  20:01:30.776 ] LOGFILE_END: FLASH run complete.
+ FLASH log file:  07-15-2024  20:20:54.824    Run number:  1
+ ==============================================================================
+ Number of MPI tasks:                 10
+ MPI version:                          3
+ MPI subversion:                       1
+ Dimensionality:                       2
+ Max Number of Blocks/Proc:          100
+ Number x zones:                      16
+ Number y zones:                      16
+ Number z zones:                       1
+ Setup stamp:     Mon Jul 15 16:21:13 2024
+ Build stamp:     Mon Jul 15 16:24:00 2024
+ System info:     Linux login-1.zaratan.umd.edu 4.18.0-513.5.1.el8_9.x86_64 #1 SMP Fri Sep 29 05:2
+ Version:         Flash-X 1.0 (heads/shanvach/incomp-heater-updates-0-g6a62ce97-dirty)            
+ Build directory: /scratch/zt1/project/ariaz-prj/user/svachhan/Flash-X-Demo/software/flashx/Flash-
+ Setup syntax:    /scratch/zt1/project/ariaz-prj/user/svachhan/Flash-X-Demo/software/flashx/Flash-X/bin/setup.py incompFlow/FlowBoiling -auto -maxblocks=100 -2d -nxb=16 -nyb=16 +amrex +parallelIO -site=/scratch/zt1/project/ariaz-prj/user/svachhan/Flash-X-Demo/sites/zaratan.umd.edu +incomp
+ f compiler flags: /cvmfs/hpcsw.umd.edu/spack-software/2022.06.15/linux-rhel8-zen2/gcc-9.4.0/openmpi-4.1.1-hm2fkyfi7d5ggq4hg2xn4dtzf2o5r2rx/bin/mpif90 -I/scratch/zt1/project/ariaz-prj/user/svachhan/Flash-X-Demo/software/amrex/AMReX/install-zaratan.umd.edu/2D/include -I/cvmfs/hpcsw.umd.edu/spack-software/2022.06.15/linux-rhel8-zen2/gcc-9.4.0/hdf5-1.10.7-fjan65etjt7gsfdld7em6n2jmsh5mhxi/include -DH5_USE_18_API -c -O3
+ c compiler flags:    /cvmfs/hpcsw.umd.edu/spack-software/2022.06.15/linux-rhel8-zen2/gcc-9.4.0/openmpi-4.1.1-hm2fkyfi7d5ggq4hg2xn4dtzf2o5r2rx/bin/mpicc -I/scratch/zt1/project/ariaz-prj/user/svachhan/Flash-X-Demo/software/amrex/AMReX/install-zaratan.umd.edu/2D/include -I/cvmfs/hpcsw.umd.edu/spack-software/2022.06.15/linux-rhel8-zen2/gcc-9.4.0/hdf5-1.10.7-fjan65etjt7gsfdld7em6n2jmsh5mhxi/include -DH5_USE_18_API -c -O3 -
+ ==============================================================================
+ Comment:  Flow Boiling problem
+ ==============================================================================
+ FLASH Units used:
+   Driver/DriverMain/Incomp
+   Grid/GridBoundaryConditions
+   Grid/GridMain/AMR/Amrex/Incomp
+   Grid/GridMain/AMR/Amrex/levelFlux
+   Grid/GridSolvers/AmrexMultigridSolver
+   IO/IOMain/hdf5/AM
+   IO/IOMain/hdf5/parallel/AM
+   IO/IOMain/hdf5/writeGrid/AM
+   PhysicalConstants/PhysicalConstantsMain
+   RuntimeParameters/RuntimeParametersMain
+   Simulation/SimulationMain/incompFlow/FlowBoiling
+   TimeAdvance/TimeAdvanceMain/StrangSplit
+   flashUtilities/contiguousConversion
+   flashUtilities/general
+   flashUtilities/interpolation/oneDim
+   flashUtilities/nameValueLL
+   flashUtilities/system/memoryUsage/legacy
+   monitors/Logfile/LogfileMain
+   monitors/Timers/TimersMain/MPINative
+   numericalTools/Stencils/StencilsAdvection
+   numericalTools/Stencils/StencilsDiffusion
+   numericalTools/Stencils/StencilsLevelset
+   numericalTools/Stencils/StencilsMain
+   numericalTools/Stencils/StencilsTemporal
+   physics/HeatAD/HeatADAdvection
+   physics/HeatAD/HeatADMain/varDiffusion
+   physics/IncompNS/IncompNSExtras
+   physics/IncompNS/IncompNSMain/varDens/presPoisson
+   physics/Multiphase/MultiphaseEvap
+   physics/Multiphase/MultiphaseMain
+   physics/sourceTerms/Heater/HeaterMain
+   physics/sourceTerms/Inlet/InletMain
+   physics/sourceTerms/Outlet/OutletMain/phaseForcing
+ ==============================================================================
+ RuntimeParameters:
+                                                                               
+ ==============================================================================
+bndpriorityone              =          1
+bndprioritythree            =          3
+bndprioritytwo              =          2
+checkpointfileintervalstep  =          0
+checkpointfilenumber        =         15 [CHANGED]
+dr_abortpause               =          2
+dr_dtminbelowaction         =          1
+drift_break_inst            =          0
+drift_trunc_mantissa        =          2
+drift_verbose_inst          =          0
+fileformatversion           =          9
+forcedplotfilenumber        =          0
+gr_amrexmg_cg_verbose       =          0
+gr_amrexmg_linop_maxorder   =          2
+gr_amrexmg_max_fmg_iter     =          0
+gr_amrexmg_max_grid_size    =         16
+gr_amrexmg_max_iter         =        200 [CHANGED]
+gr_amrexmg_max_level        =          1
+gr_amrexmg_n_cell           =         32
+gr_amrexmg_prob_type        =          1
+gr_amrexmg_ref_ratio        =          2
+gr_amrexmg_verbose          =          2
+gr_amrex_verbosity          =          1
+gr_lrefmaxtimevalue_1       =         -1
+gr_lrefmaxtimevalue_10      =         -1
+gr_lrefmaxtimevalue_11      =         -1
+gr_lrefmaxtimevalue_12      =         -1
+gr_lrefmaxtimevalue_13      =         -1
+gr_lrefmaxtimevalue_14      =         -1
+gr_lrefmaxtimevalue_15      =         -1
+gr_lrefmaxtimevalue_16      =         -1
+gr_lrefmaxtimevalue_17      =         -1
+gr_lrefmaxtimevalue_18      =         -1
+gr_lrefmaxtimevalue_19      =         -1
+gr_lrefmaxtimevalue_2       =         -1
+gr_lrefmaxtimevalue_20      =         -1
+gr_lrefmaxtimevalue_3       =         -1
+gr_lrefmaxtimevalue_4       =         -1
+gr_lrefmaxtimevalue_5       =         -1
+gr_lrefmaxtimevalue_6       =         -1
+gr_lrefmaxtimevalue_7       =         -1
+gr_lrefmaxtimevalue_8       =         -1
+gr_lrefmaxtimevalue_9       =         -1
+gr_restrictallmethod        =          3
+gr_sanitizedatamode         =          0
+gr_tilesizex                =         16
+gr_tilesizey                =         16
+gr_tilesizez                =          1
+ht_intschm                  =          2
+htr_annqueries              =          3
+htr_numheaters              =          2 [CHANGED]
+iprocs                      =          1
+ins_advschm                 =          2 [CHANGED]
+ins_cflflg                  =          1
+ins_intschm                 =          2
+ins_isgs                    =          0
+ins_velprolongmethod        =          1
+interpol_order              =          2
+jprocs                      =          1
+kprocs                      =          1
+lrefine_del                 =          0
+lrefine_max                 =          1
+lrefine_min                 =          1
+max_particles_per_blk       =        100
+memory_stat_freq            =     100000
+meshcopycount               =          1
+min_particles_per_blk       =          1
+mph_extpit                  =          5
+mph_lsit                    =          2
+nbegin                      =          1
+nblockx                     =        100 [CHANGED]
+nblocky                     =         10 [CHANGED]
+nblockz                     =          1
+nend                        =    1200000 [CHANGED]
+nrefs                       =   10000000 [CHANGED]
+nsteptotalsts               =          5
+outputsplitnum              =          1
+plotfileintervalstep        =          0
+plotfilenumber              =         34 [CHANGED]
+refine_var_count            =          4
+rolling_checkpoint          =        150 [CHANGED]
+sweeporder                  =        123
+wr_integrals_freq           =          1
+checkpointfileintervaltime  =                 0.100E+01
+checkpointfileintervalz     =                 0.180+309
+derefine_cutoff_1           =                 0.200E+00
+derefine_cutoff_2           =                 0.200E+00
+derefine_cutoff_3           =                 0.200E+00
+derefine_cutoff_4           =                 0.200E+00
+dr_dtmincontinue            =                 0.000E+00
+dr_tstepslowstartfactor     =                 0.100E+00
+dtinit                      =                 0.100E-03 [CHANGED]
+dtmax                       =                 0.400E-03 [CHANGED]
+dtmin                       =                 0.100E-09
+gr_amrexmg_tol              =                 0.100E-08 [CHANGED]
+gr_btworkchildscaling       =                 0.100E+01
+gr_btworkdefaultleaf        =                 0.200E+01
+gr_btworkdefaultpar         =                 0.100E+01
+gr_btworklbleaf             =                 0.000E+00
+gr_btworklbpar              =                 0.000E+00
+gr_btworkubleaf             =                 0.100E+07
+gr_btworkubpar              =                 0.100E+07
+gr_lrefinemaxredlogbase     =                 0.100E+02
+gr_lrefinemaxredradiusfact  =                 0.000E+00
+gr_lrefinemaxredtref        =                 0.000E+00
+gr_lrefinemaxredtimescale   =                 0.100E+01
+gr_lrefmaxtime_1            =                -0.100E+01
+gr_lrefmaxtime_10           =                -0.100E+01
+gr_lrefmaxtime_11           =                -0.100E+01
+gr_lrefmaxtime_12           =                -0.100E+01
+gr_lrefmaxtime_13           =                -0.100E+01
+gr_lrefmaxtime_14           =                -0.100E+01
+gr_lrefmaxtime_15           =                -0.100E+01
+gr_lrefmaxtime_16           =                -0.100E+01
+gr_lrefmaxtime_17           =                -0.100E+01
+gr_lrefmaxtime_18           =                -0.100E+01
+gr_lrefmaxtime_19           =                -0.100E+01
+gr_lrefmaxtime_2            =                -0.100E+01
+gr_lrefmaxtime_20           =                -0.100E+01
+gr_lrefmaxtime_3            =                -0.100E+01
+gr_lrefmaxtime_4            =                -0.100E+01
+gr_lrefmaxtime_5            =                -0.100E+01
+gr_lrefmaxtime_6            =                -0.100E+01
+gr_lrefmaxtime_7            =                -0.100E+01
+gr_lrefmaxtime_8            =                -0.100E+01
+gr_lrefmaxtime_9            =                -0.100E+01
+ht_nusselt                  =                 0.100E+01
+ht_prandtl                  =                 0.840E+01 [CHANGED]
+ht_tbulk                    =                 0.000E+00
+ht_twall_high               =                 0.100E+01
+ht_twall_low                =                 0.000E+00
+htr_nucseedradius           =                 0.100E+00
+in_buffer                   =                 0.100E+01
+in_growthrate               =                 0.400E+01
+in_sink                     =                -0.100E+01
+ins_cfl                     =                 0.500E-01 [CHANGED]
+ins_dpdx                    =                 0.000E+00
+ins_dpdy                    =                 0.000E+00
+ins_dpdz                    =                 0.000E+00
+ins_dtspec                  =                 0.100E-03 [CHANGED]
+ins_gravx                   =                 0.000E+00
+ins_gravy                   =                -0.100E+01 [CHANGED]
+ins_gravz                   =                 0.000E+00
+ins_inflowvelscale          =                 0.100E+01
+ins_invreynolds             =                 0.420E-02 [CHANGED]
+ins_sigma                   =                 0.500E-01 [CHANGED]
+mph_cpgas                   =                 0.830E+00 [CHANGED]
+mph_stefan                  =                 0.530E+00 [CHANGED]
+mph_tsat                    =                 0.150E+00 [CHANGED]
+mph_ipropsmear              =                 0.150E+01 [CHANGED]
+mph_invweber                =                 0.100E+01
+mph_mugas                   =                 0.100E+01
+mph_rhogas                  =                 0.830E-02 [CHANGED]
+mph_thcogas                 =                 0.250E+00 [CHANGED]
+nusts                       =                 0.100E+00
+out_buffer                  =                 0.200E+01 [CHANGED]
+out_growthrate              =                 0.400E+01
+out_sink                    =                -0.100E+01
+out_velrefscale             =                 0.100E+01
+plotfileintervaltime        =                 0.500E+00 [CHANGED]
+plotfileintervalz           =                 0.180+309
+refine_cutoff_1             =                 0.800E+00
+refine_cutoff_2             =                 0.800E+00
+refine_cutoff_3             =                 0.800E+00
+refine_cutoff_4             =                 0.800E+00
+refine_filter_1             =                 0.100E-01
+refine_filter_2             =                 0.100E-01
+refine_filter_3             =                 0.100E-01
+refine_filter_4             =                 0.100E-01
+rss_limit                   =                -0.100E+01
+sim_lengthscalemeters       =                 0.100E-02 [CHANGED]
+sim_timescaleseconds        =                 0.100E-01 [CHANGED]
+small                       =                 0.100E-09
+smalle                      =                 0.100E-09
+smallp                      =                 0.100E-09
+smallt                      =                 0.100E-09
+smallu                      =                 0.100E-09
+smallx                      =                 0.100E-09
+smlrho                      =                 0.100E-09
+tinitial                    =                 0.000E+00
+tmax                        =                 0.300E+02 [CHANGED]
+tstep_change_factor         =                 0.101E+01 [CHANGED]
+wall_clock_checkpoint       =                 0.432E+05
+wall_clock_time_limit       =                -0.100E+01 [CHANGED]
+x_refine_center             =                 0.000E+00
+xmax                        =                 0.250E+02 [CHANGED]
+xmin                        =                -0.250E+02 [CHANGED]
+y_refine_center             =                 0.000E+00
+ymax                        =                 0.500E+01 [CHANGED]
+ymin                        =                 0.000E+00
+zfinal                      =                 0.000E+00
+zinitial                    =                -0.100E+01
+z_refine_center             =                 0.000E+00
+zmax                        =                 0.100E+01
+zmin                        =                 0.000E+00
+amrexfaceinterpolator       = FACE_LINEAR                   
+amrexinterpolator           = CELL_CONSERVATIVE_LINEAR      
+basenm                      = INS_Flow_Boiling_              [CHANGED]
+eosmode                     = dens_ie                       
+eosmodeinit                 = dens_ie                       
+geometry                    = cartesian                     
+grav_boundary_type          = isolated                      
+htr_heatername              = flow_boiling                   [CHANGED]
+log_file                    = INS_Flow_Boiling.log           [CHANGED]
+output_directory            =                               
+pc_unitsbase                = CGS                           
+plot_grid_var_1             = none                          
+plot_grid_var_10            = none                          
+plot_grid_var_11            = none                          
+plot_grid_var_12            = none                          
+plot_grid_var_13            = none                          
+plot_grid_var_14            = none                          
+plot_grid_var_15            = none                          
+plot_grid_var_16            = none                          
+plot_grid_var_17            = none                          
+plot_grid_var_18            = none                          
+plot_grid_var_19            = none                          
+plot_grid_var_2             = none                          
+plot_grid_var_20            = none                          
+plot_grid_var_21            = none                          
+plot_grid_var_22            = none                          
+plot_grid_var_23            = none                          
+plot_grid_var_24            = none                          
+plot_grid_var_25            = none                          
+plot_grid_var_26            = none                          
+plot_grid_var_27            = none                          
+plot_grid_var_28            = none                          
+plot_grid_var_29            = none                          
+plot_grid_var_3             = none                          
+plot_grid_var_30            = none                          
+plot_grid_var_31            = none                          
+plot_grid_var_32            = none                          
+plot_grid_var_33            = none                          
+plot_grid_var_34            = none                          
+plot_grid_var_35            = none                          
+plot_grid_var_36            = none                          
+plot_grid_var_37            = none                          
+plot_grid_var_38            = none                          
+plot_grid_var_39            = none                          
+plot_grid_var_4             = none                          
+plot_grid_var_40            = none                          
+plot_grid_var_41            = none                          
+plot_grid_var_42            = none                          
+plot_grid_var_43            = none                          
+plot_grid_var_44            = none                          
+plot_grid_var_45            = none                          
+plot_grid_var_46            = none                          
+plot_grid_var_47            = none                          
+plot_grid_var_48            = none                          
+plot_grid_var_49            = none                          
+plot_grid_var_5             = none                          
+plot_grid_var_50            = none                          
+plot_grid_var_51            = none                          
+plot_grid_var_52            = none                          
+plot_grid_var_53            = none                          
+plot_grid_var_54            = none                          
+plot_grid_var_55            = none                          
+plot_grid_var_56            = none                          
+plot_grid_var_57            = none                          
+plot_grid_var_58            = none                          
+plot_grid_var_59            = none                          
+plot_grid_var_6             = none                          
+plot_grid_var_60            = none                          
+plot_grid_var_61            = none                          
+plot_grid_var_62            = none                          
+plot_grid_var_63            = none                          
+plot_grid_var_64            = none                          
+plot_grid_var_65            = none                          
+plot_grid_var_66            = none                          
+plot_grid_var_67            = none                          
+plot_grid_var_68            = none                          
+plot_grid_var_69            = none                          
+plot_grid_var_7             = none                          
+plot_grid_var_70            = none                          
+plot_grid_var_71            = none                          
+plot_grid_var_72            = none                          
+plot_grid_var_73            = none                          
+plot_grid_var_74            = none                          
+plot_grid_var_75            = none                          
+plot_grid_var_76            = none                          
+plot_grid_var_77            = none                          
+plot_grid_var_78            = none                          
+plot_grid_var_8             = none                          
+plot_grid_var_9             = none                          
+plot_var_1                  = pres                           [CHANGED]
+plot_var_10                 = none                          
+plot_var_11                 = none                          
+plot_var_12                 = none                          
+plot_var_13                 = none                          
+plot_var_14                 = none                          
+plot_var_15                 = none                          
+plot_var_16                 = none                          
+plot_var_17                 = none                          
+plot_var_18                 = none                          
+plot_var_19                 = none                          
+plot_var_2                  = velx                           [CHANGED]
+plot_var_20                 = none                          
+plot_var_21                 = none                          
+plot_var_22                 = none                          
+plot_var_23                 = none                          
+plot_var_24                 = none                          
+plot_var_25                 = none                          
+plot_var_3                  = vely                           [CHANGED]
+plot_var_4                  = dfun                           [CHANGED]
+plot_var_5                  = temp                           [CHANGED]
+plot_var_6                  = none                          
+plot_var_7                  = none                          
+plot_var_8                  = none                          
+plot_var_9                  = none                          
+prof_file                   = profile.dat                   
+refine_var_1                = none                          
+refine_var_2                = none                          
+refine_var_3                = none                          
+refine_var_4                = none                          
+run_comment                 = Flow Boiling problem           [CHANGED]
+run_number                  = 1                             
+stats_file                  = flashx.dat                    
+xl_boundary_type            = inflow_ins                     [CHANGED]
+xr_boundary_type            = outflow_ins                    [CHANGED]
+yl_boundary_type            = noslip_ins                     [CHANGED]
+yr_boundary_type            = noslip_ins                     [CHANGED]
+zl_boundary_type            = periodic                      
+zr_boundary_type            = periodic                      
+csvsummaryallprocs          =  F
+logsummaryallprocs          =  F
+allowdtstsdominate          =  F
+alwayscomputeuservars       =  T
+alwaysrestrictcheckpoint    =  T
+chkguardcellsinput          =  F
+chkguardcellsoutput         =  F
+converttoconsvdformeshcalls =  F
+converttoconsvdinmeshinterp =  F
+corners                     =  F
+dr_printtsteploc            =  T
+dr_rununittest              =  F
+dr_shortenlaststepbeforetmax =  F
+drift_tuples                =  F
+eachprocwritesownabortlog   =  F
+eachprocwritessummary       =  F
+earlyblockdistadjustment    =  T
+enablemaskedgcfill          =  T
+flux_correct                =  T
+flux_correct_perlevel       =  T
+geometryoverride            =  F
+gr_amrexmg_agglomeration    =  T
+gr_amrexmg_composite_solve  =  T [CHANGED]
+gr_amrexmg_consolidation    =  T
+gr_amrexusebittree          =  F
+gr_bcenableapplymixedgds    =  F
+gr_bndgcfillneedsprimitivevars =  F
+gr_btcustomwork             =  F
+gr_btexchangework           =  F
+gr_btsortbywork             =  T
+gr_enabletiling             =  F
+gr_gcfillsinglevarrange     =  F
+gr_lrefinemaxbytime         =  F
+gr_lrefinemaxreddobylogr    =  F
+gr_lrefinemaxreddobytime    =  F
+gr_usetiling                =  F
+htr_showinfo                =  F
+ignoreforcedplot            =  T [CHANGED]
+ins_pressurecorrect         =  F [CHANGED]
+io_plotfileamrexformat      =  F
+io_writemscalarintegrals    =  F
+plotfilegridquantitydp      =  F
+plotfilemetadatadp          =  F
+reducegcellfills            =  F
+refine_on_particle_count    =  F
+restart                     =  T [CHANGED]
+summaryoutputonly           =  F
+threadblocklistbuild        =  F
+threaddelepblocklist        =  F
+threaddelepwithinblock      =  F
+threaddriverblocklist       =  F
+threaddriverwithinblock     =  F
+threadraytracebuild         =  F
+threadwithinblockbuild      =  F
+tmr_suppressinparallel      =  F
+typematchedxfer             =  T
+unbiased_geometry           =  F
+useburn                     =  F
+usecollectivehdf5           =  T
+usedeleptonize              =  F
+usegravity                  =  F
+useheatad                   =  T
+useheater                   =  T
+usehydro                    =  F
+useimbound                  =  F
+useincompns                 =  T
+useinlet                    =  T
+uselegacylabels             =  T
+usemultiphase               =  T
+useoutlet                   =  T
+useparticles                =  F
+useradtrans                 =  F
+usests                      =  F
+usestsfordiffusion          =  F
+usesolidmechanics           =  F
+writestatsummary            =  T
+                                                                               
+ ==============================================================================
+                                                                               
+ Known units of measurement:
+                                                                               
+              Unit                          CGS Value                Base Unit
+  1                  cm                     1.0000                           cm
+  2                   s                     1.0000                            s
+  3                   g                     1.0000                            g
+  4                   K                     1.0000                            K
+  5                 esu                     1.0000                          esu
+  6                 mol                     1.0000                          mol
+  7                   m                     100.00                           cm
+  8                  km                    1.00000E+05                       cm
+  9                  pc                    3.08568E+18                       cm
+ 10                 kpc                    3.08568E+21                       cm
+ 11                 Mpc                    3.08568E+24                       cm
+ 12                 Gpc                    3.08568E+27                       cm
+ 13                Rsun                    6.96000E+10                       cm
+ 14                  AU                    1.49598E+13                       cm
+ 15                  yr                    3.15569E+07                        s
+ 16                 Myr                    3.15569E+13                        s
+ 17                 Gyr                    3.15569E+16                        s
+ 18                  kg                     1000.0                            g
+ 19                Msun                    1.98892E+33                        g
+ 20                 amu                    1.66054E-24                        g
+ 21                  eV                     11605.                            K
+ 22                   C                    2.99792E+09                      esu
+ 23                LFLY                    3.08568E+24                       cm
+ 24                TFLY                    2.05759E+17                        s
+ 25                MFLY                    9.88470E+45                        g
+ 26            clLength                    3.08568E+24                       cm
+ 27              clTime                    3.15569E+16                        s
+ 28              clMass                    1.98892E+48                        g
+ 29              clTemp                    1.16045E+07                        K
+-----------End of Units--------------------
+                                                                               
+ Known physical constants:
+                                                                               
+    Constant Name       Constant Value   cm       s        g        K        esu      mol
+  1              Newton    6.67408E-08   3.0     -2.0     -1.0      0.0      0.0      0.0    
+  2      speed of light    2.99792E+10   1.0     -1.0      0.0      0.0      0.0      0.0    
+  3              Planck    6.62607E-27   2.0     -1.0      1.0      0.0      0.0      0.0    
+  4     electron charge    4.80320E-10   0.0      0.0      0.0      0.0      1.0      0.0    
+  5       electron mass    9.10938E-28   0.0      0.0      1.0      0.0      0.0      0.0    
+  6         proton mass    1.67262E-24   0.0      0.0      1.0      0.0      0.0      0.0    
+  7      fine-structure    7.29735E-03   0.0      0.0      0.0      0.0      0.0      0.0    
+  8            Avogadro    6.02214E+23   0.0      0.0      0.0      0.0      0.0     -1.0    
+  9           Boltzmann    1.38065E-16   2.0     -2.0      1.0     -1.0      0.0      0.0    
+ 10  ideal gas constant    8.31446E+07   2.0     -2.0      1.0     -1.0      0.0     -1.0    
+ 11                Wien    0.28978       1.0      0.0      0.0      1.0      0.0      0.0    
+ 12    Stefan-Boltzmann    5.67037E-05   0.0     -3.0      1.0     -4.0      0.0      0.0    
+ 13  Radiation Constant    7.56572E-15  -1.0     -2.0      1.0     -4.0      0.0      0.0    
+ 14                  pi     3.1416       0.0      0.0      0.0      0.0      0.0      0.0    
+ 15                   e     2.7183       0.0      0.0      0.0      0.0      0.0      0.0    
+ 16               Euler    0.57722       0.0      0.0      0.0      0.0      0.0      0.0    
+ ==============================================================================
+                                                                               
+ Multifluid database: not configured in
+                                                                               
+ ==============================================================================
+ [ 07-15-2024  20:20:54.857 ] [gr_initGeometry] checking BCs for idir: 1
+ [ 07-15-2024  20:20:54.864 ] [gr_initGeometry] checking BCs for idir: 2
+ [ 07-15-2024  20:20:54.873 ] [gr_amrexInit]: AMREX_GIT_VERSION=23.11
+ WARNING : Adaptive Grid did not find any variable to refine
+ [ 07-15-2024  20:20:55.293 ] memory: /proc vsize    (MB):      389.57 (min)      13749.28 (max)       7860.05 (avg)
+ [ 07-15-2024  20:20:55.300 ] memory: /proc rss      (MB):       97.36 (min)         98.08 (max)         97.66 (avg)
+ [ 07-15-2024  20:20:55.306 ] [io_readData] file opened: type=checkpoint name=INS_Flow_Boiling_hdf5_chk_0015
+ [ 07-15-2024  20:20:55.900 ] [io_readData] file_closed: type=checkpoint name=INS_Flow_Boiling_hdf5_chk_0015
+ [ 07-15-2024  20:20:55.911 ] memory: /proc vsize    (MB):      410.69 (min)      13774.50 (max)       7884.44 (avg)
+ [ 07-15-2024  20:20:55.916 ] memory: /proc rss      (MB):      115.89 (min)        134.10 (max)        117.99 (avg)
+ [ 07-15-2024  20:20:55.923 ] memory: /proc vsize    (MB):      410.69 (min)      13774.50 (max)       7884.44 (avg)
+ [ 07-15-2024  20:20:55.932 ] memory: /proc rss      (MB):      115.89 (min)        134.10 (max)        117.99 (avg)
+ [ 07-15-2024  20:20:56.122 ] [IO_writePlotfile] open: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0034
+ [ 07-15-2024  20:20:56.147 ] [io_writeData]: wrote    1000          blocks
+ [ 07-15-2024  20:20:56.169 ] [IO_writePlotfile] close: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0034
+ [ 07-15-2024  20:20:56.169 ] memory: /proc vsize    (MB):      414.79 (min)      13786.79 (max)       7890.33 (avg)
+ [ 07-15-2024  20:20:56.170 ] memory: /proc rss      (MB):      116.10 (min)        136.04 (max)        118.41 (avg)
+ [ 07-15-2024  20:20:56.171 ] [Driver_evolveAll]: Entering evolution loop
+ [ 07-15-2024  20:20:56.173 ] [Driver_evolveAll] start-time: 1.5000129457721E+01
+ [ 07-15-2024  20:23:37.323 ] [IO_writePlotfile] open: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0035
+ [ 07-15-2024  20:23:37.354 ] [io_writeData]: wrote    1000          blocks
+ [ 07-15-2024  20:23:37.374 ] [IO_writePlotfile] close: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0035
+ [ 07-15-2024  20:26:49.259 ] [IO_writePlotfile] open: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0036
+ [ 07-15-2024  20:26:49.278 ] [io_writeData]: wrote    1000          blocks
+ [ 07-15-2024  20:26:49.281 ] [IO_writePlotfile] close: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0036
+ [ 07-15-2024  20:26:49.326 ] [IO_writeCheckpoint] open: type=checkpoint name=INS_Flow_Boiling_hdf5_chk_0016
+ [ 07-15-2024  20:26:49.404 ] [io_writeData]: wrote    1000          blocks
+ [ 07-15-2024  20:26:49.409 ] [IO_writeCheckpoint] close: type=checkpoint name=INS_Flow_Boiling_hdf5_chk_0016
+ [ 07-15-2024  20:27:00.251 ] memory: /proc vsize    (MB):      427.05 (min)      13807.28 (max)       7904.79 (avg)
+ [ 07-15-2024  20:27:00.253 ] memory: /proc rss      (MB):      124.07 (min)        138.85 (max)        128.24 (avg)
+ [ 07-15-2024  20:27:00.262 ] memory: /proc vsize    (MB):      427.05 (min)      13807.28 (max)       7904.79 (avg)
+ [ 07-15-2024  20:27:00.265 ] memory: /proc rss      (MB):      124.07 (min)        138.85 (max)        128.24 (avg)
+ [ 07-15-2024  20:30:01.118 ] [IO_writePlotfile] open: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0037
+ [ 07-15-2024  20:30:01.137 ] [io_writeData]: wrote    1000          blocks
+ [ 07-15-2024  20:30:01.142 ] [IO_writePlotfile] close: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0037
+ [ 07-15-2024  20:33:07.480 ] [IO_writePlotfile] open: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0038
+ [ 07-15-2024  20:33:07.501 ] [io_writeData]: wrote    1000          blocks
+ [ 07-15-2024  20:33:07.510 ] [IO_writePlotfile] close: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0038
+ [ 07-15-2024  20:33:07.584 ] [IO_writeCheckpoint] open: type=checkpoint name=INS_Flow_Boiling_hdf5_chk_0017
+ [ 07-15-2024  20:33:07.658 ] [io_writeData]: wrote    1000          blocks
+ [ 07-15-2024  20:33:07.664 ] [IO_writeCheckpoint] close: type=checkpoint name=INS_Flow_Boiling_hdf5_chk_0017
+ [ 07-15-2024  20:36:04.589 ] [IO_writePlotfile] open: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0039
+ [ 07-15-2024  20:36:04.612 ] [io_writeData]: wrote    1000          blocks
+ [ 07-15-2024  20:36:04.618 ] [IO_writePlotfile] close: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0039
+ [ 07-15-2024  20:39:06.192 ] [IO_writePlotfile] open: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0040
+ [ 07-15-2024  20:39:06.213 ] [io_writeData]: wrote    1000          blocks
+ [ 07-15-2024  20:39:06.217 ] [IO_writePlotfile] close: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0040
+ [ 07-15-2024  20:39:06.259 ] [IO_writeCheckpoint] open: type=checkpoint name=INS_Flow_Boiling_hdf5_chk_0018
+ [ 07-15-2024  20:39:06.342 ] [io_writeData]: wrote    1000          blocks
+ [ 07-15-2024  20:39:06.347 ] [IO_writeCheckpoint] close: type=checkpoint name=INS_Flow_Boiling_hdf5_chk_0018
+ [ 07-15-2024  20:42:11.066 ] [IO_writePlotfile] open: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0041
+ [ 07-15-2024  20:42:11.093 ] [io_writeData]: wrote    1000          blocks
+ [ 07-15-2024  20:42:11.105 ] [IO_writePlotfile] close: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0041
+ [ 07-15-2024  20:45:12.948 ] [IO_writePlotfile] open: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0042
+ [ 07-15-2024  20:45:12.974 ] [io_writeData]: wrote    1000          blocks
+ [ 07-15-2024  20:45:12.994 ] [IO_writePlotfile] close: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0042
+ [ 07-15-2024  20:45:13.249 ] [IO_writeCheckpoint] open: type=checkpoint name=INS_Flow_Boiling_hdf5_chk_0019
+ [ 07-15-2024  20:45:13.339 ] [io_writeData]: wrote    1000          blocks
+ [ 07-15-2024  20:45:13.362 ] [IO_writeCheckpoint] close: type=checkpoint name=INS_Flow_Boiling_hdf5_chk_0019
+ [ 07-15-2024  20:48:17.340 ] [IO_writePlotfile] open: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0043
+ [ 07-15-2024  20:48:17.359 ] [io_writeData]: wrote    1000          blocks
+ [ 07-15-2024  20:48:17.363 ] [IO_writePlotfile] close: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0043
+ [ 07-15-2024  20:51:25.408 ] [IO_writePlotfile] open: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0044
+ [ 07-15-2024  20:51:25.428 ] [io_writeData]: wrote    1000          blocks
+ [ 07-15-2024  20:51:25.433 ] [IO_writePlotfile] close: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0044
+ [ 07-15-2024  20:51:25.488 ] [IO_writeCheckpoint] open: type=checkpoint name=INS_Flow_Boiling_hdf5_chk_0020
+ [ 07-15-2024  20:51:25.562 ] [io_writeData]: wrote    1000          blocks
+ [ 07-15-2024  20:51:25.569 ] [IO_writeCheckpoint] close: type=checkpoint name=INS_Flow_Boiling_hdf5_chk_0020
+ [ 07-15-2024  20:54:46.796 ] [IO_writePlotfile] open: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0045
+ [ 07-15-2024  20:54:46.815 ] [io_writeData]: wrote    1000          blocks
+ [ 07-15-2024  20:54:46.819 ] [IO_writePlotfile] close: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0045
+ [ 07-15-2024  20:58:00.289 ] [IO_writePlotfile] open: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0046
+ [ 07-15-2024  20:58:00.308 ] [io_writeData]: wrote    1000          blocks
+ [ 07-15-2024  20:58:00.312 ] [IO_writePlotfile] close: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0046
+ [ 07-15-2024  20:58:00.366 ] [IO_writeCheckpoint] open: type=checkpoint name=INS_Flow_Boiling_hdf5_chk_0021
+ [ 07-15-2024  20:58:00.432 ] [io_writeData]: wrote    1000          blocks
+ [ 07-15-2024  20:58:00.439 ] [IO_writeCheckpoint] close: type=checkpoint name=INS_Flow_Boiling_hdf5_chk_0021
+ [ 07-15-2024  21:01:07.477 ] [IO_writePlotfile] open: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0047
+ [ 07-15-2024  21:01:07.498 ] [io_writeData]: wrote    1000          blocks
+ [ 07-15-2024  21:01:07.501 ] [IO_writePlotfile] close: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0047
+ [ 07-15-2024  21:04:22.345 ] [IO_writePlotfile] open: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0048
+ [ 07-15-2024  21:04:22.362 ] [io_writeData]: wrote    1000          blocks
+ [ 07-15-2024  21:04:22.366 ] [IO_writePlotfile] close: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0048
+ [ 07-15-2024  21:04:22.411 ] [IO_writeCheckpoint] open: type=checkpoint name=INS_Flow_Boiling_hdf5_chk_0022
+ [ 07-15-2024  21:04:22.480 ] [io_writeData]: wrote    1000          blocks
+ [ 07-15-2024  21:04:22.488 ] [IO_writeCheckpoint] close: type=checkpoint name=INS_Flow_Boiling_hdf5_chk_0022
+ [ 07-15-2024  21:07:37.707 ] [IO_writePlotfile] open: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0049
+ [ 07-15-2024  21:07:37.727 ] [io_writeData]: wrote    1000          blocks
+ [ 07-15-2024  21:07:37.731 ] [IO_writePlotfile] close: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0049
+ [ 07-15-2024  21:10:44.855 ] [IO_writePlotfile] open: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0050
+ [ 07-15-2024  21:10:44.880 ] [io_writeData]: wrote    1000          blocks
+ [ 07-15-2024  21:10:44.894 ] [IO_writePlotfile] close: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0050
+ [ 07-15-2024  21:10:44.941 ] [IO_writeCheckpoint] open: type=checkpoint name=INS_Flow_Boiling_hdf5_chk_0023
+ [ 07-15-2024  21:10:45.039 ] [io_writeData]: wrote    1000          blocks
+ [ 07-15-2024  21:10:45.050 ] [IO_writeCheckpoint] close: type=checkpoint name=INS_Flow_Boiling_hdf5_chk_0023
+ [ 07-15-2024  21:14:02.848 ] [IO_writePlotfile] open: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0051
+ [ 07-15-2024  21:14:02.872 ] [io_writeData]: wrote    1000          blocks
+ [ 07-15-2024  21:14:02.884 ] [IO_writePlotfile] close: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0051
+ [ 07-15-2024  21:17:05.804 ] [IO_writePlotfile] open: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0052
+ [ 07-15-2024  21:17:05.830 ] [io_writeData]: wrote    1000          blocks
+ [ 07-15-2024  21:17:05.845 ] [IO_writePlotfile] close: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0052
+ [ 07-15-2024  21:17:06.040 ] [IO_writeCheckpoint] open: type=checkpoint name=INS_Flow_Boiling_hdf5_chk_0024
+ [ 07-15-2024  21:17:06.108 ] [io_writeData]: wrote    1000          blocks
+ [ 07-15-2024  21:17:06.116 ] [IO_writeCheckpoint] close: type=checkpoint name=INS_Flow_Boiling_hdf5_chk_0024
+ [ 07-15-2024  21:20:11.187 ] [IO_writePlotfile] open: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0053
+ [ 07-15-2024  21:20:11.209 ] [io_writeData]: wrote    1000          blocks
+ [ 07-15-2024  21:20:11.215 ] [IO_writePlotfile] close: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0053
+ [ 07-15-2024  21:23:21.563 ] [IO_writePlotfile] open: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0054
+ [ 07-15-2024  21:23:21.592 ] [io_writeData]: wrote    1000          blocks
+ [ 07-15-2024  21:23:21.609 ] [IO_writePlotfile] close: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0054
+ [ 07-15-2024  21:23:21.836 ] [IO_writeCheckpoint] open: type=checkpoint name=INS_Flow_Boiling_hdf5_chk_0025
+ [ 07-15-2024  21:23:21.912 ] [io_writeData]: wrote    1000          blocks
+ [ 07-15-2024  21:23:21.929 ] [IO_writeCheckpoint] close: type=checkpoint name=INS_Flow_Boiling_hdf5_chk_0025
+ [ 07-15-2024  21:26:30.762 ] [IO_writePlotfile] open: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0055
+ [ 07-15-2024  21:26:30.782 ] [io_writeData]: wrote    1000          blocks
+ [ 07-15-2024  21:26:30.787 ] [IO_writePlotfile] close: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0055
+ [ 07-15-2024  21:29:47.558 ] [IO_writePlotfile] open: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0056
+ [ 07-15-2024  21:29:47.577 ] [io_writeData]: wrote    1000          blocks
+ [ 07-15-2024  21:29:47.581 ] [IO_writePlotfile] close: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0056
+ [ 07-15-2024  21:29:47.699 ] [IO_writeCheckpoint] open: type=checkpoint name=INS_Flow_Boiling_hdf5_chk_0026
+ [ 07-15-2024  21:29:47.791 ] [io_writeData]: wrote    1000          blocks
+ [ 07-15-2024  21:29:47.797 ] [IO_writeCheckpoint] close: type=checkpoint name=INS_Flow_Boiling_hdf5_chk_0026
+ [ 07-15-2024  21:32:54.714 ] [IO_writePlotfile] open: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0057
+ [ 07-15-2024  21:32:54.736 ] [io_writeData]: wrote    1000          blocks
+ [ 07-15-2024  21:32:54.739 ] [IO_writePlotfile] close: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0057
+ [ 07-15-2024  21:35:50.037 ] [IO_writePlotfile] open: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0058
+ [ 07-15-2024  21:35:50.061 ] [io_writeData]: wrote    1000          blocks
+ [ 07-15-2024  21:35:50.075 ] [IO_writePlotfile] close: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0058
+ [ 07-15-2024  21:35:50.281 ] [IO_writeCheckpoint] open: type=checkpoint name=INS_Flow_Boiling_hdf5_chk_0027
+ [ 07-15-2024  21:35:50.379 ] [io_writeData]: wrote    1000          blocks
+ [ 07-15-2024  21:35:50.401 ] [IO_writeCheckpoint] close: type=checkpoint name=INS_Flow_Boiling_hdf5_chk_0027
+ [ 07-15-2024  21:38:48.641 ] [IO_writePlotfile] open: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0059
+ [ 07-15-2024  21:38:48.662 ] [io_writeData]: wrote    1000          blocks
+ [ 07-15-2024  21:38:48.666 ] [IO_writePlotfile] close: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0059
+ [ 07-15-2024  21:41:55.857 ] [IO_writePlotfile] open: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0060
+ [ 07-15-2024  21:41:55.886 ] [io_writeData]: wrote    1000          blocks
+ [ 07-15-2024  21:41:55.890 ] [IO_writePlotfile] close: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0060
+ [ 07-15-2024  21:41:56.330 ] [IO_writeCheckpoint] open: type=checkpoint name=INS_Flow_Boiling_hdf5_chk_0028
+ [ 07-15-2024  21:41:56.415 ] [io_writeData]: wrote    1000          blocks
+ [ 07-15-2024  21:41:56.429 ] [IO_writeCheckpoint] close: type=checkpoint name=INS_Flow_Boiling_hdf5_chk_0028
+ [ 07-15-2024  21:44:57.844 ] [IO_writePlotfile] open: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0061
+ [ 07-15-2024  21:44:57.870 ] [io_writeData]: wrote    1000          blocks
+ [ 07-15-2024  21:44:57.889 ] [IO_writePlotfile] close: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0061
+ [ 07-15-2024  21:47:59.312 ] [IO_writePlotfile] open: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0062
+ [ 07-15-2024  21:47:59.332 ] [io_writeData]: wrote    1000          blocks
+ [ 07-15-2024  21:47:59.336 ] [IO_writePlotfile] close: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0062
+ [ 07-15-2024  21:47:59.383 ] [IO_writeCheckpoint] open: type=checkpoint name=INS_Flow_Boiling_hdf5_chk_0029
+ [ 07-15-2024  21:47:59.467 ] [io_writeData]: wrote    1000          blocks
+ [ 07-15-2024  21:47:59.475 ] [IO_writeCheckpoint] close: type=checkpoint name=INS_Flow_Boiling_hdf5_chk_0029
+ [ 07-15-2024  21:51:01.446 ] [IO_writePlotfile] open: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0063
+ [ 07-15-2024  21:51:01.470 ] [io_writeData]: wrote    1000          blocks
+ [ 07-15-2024  21:51:01.474 ] [IO_writePlotfile] close: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0063
+ [ 07-15-2024  21:54:06.079 ] [IO_writePlotfile] open: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0064
+ [ 07-15-2024  21:54:06.110 ] [io_writeData]: wrote    1000          blocks
+ [ 07-15-2024  21:54:06.125 ] [IO_writePlotfile] close: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0064
+ [ 07-15-2024  21:54:06.195 ] [IO_writeCheckpoint] open: type=checkpoint name=INS_Flow_Boiling_hdf5_chk_0030
+ [ 07-15-2024  21:54:06.307 ] [io_writeData]: wrote    1000          blocks
+ [ 07-15-2024  21:54:06.326 ] [IO_writeCheckpoint] close: type=checkpoint name=INS_Flow_Boiling_hdf5_chk_0030
+ [ 07-15-2024  21:54:06.337 ] [Driver_evolveAll] end-time: 3.0000098291122E+01
+ [ 07-15-2024  21:54:06.343 ] [Driver_evolveAll]: Exiting evolution loop
+ [ 07-15-2024  21:54:06.605 ] [IO_writePlotfile] open: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0065
+ [ 07-15-2024  21:54:06.654 ] [io_writeData]: wrote    1000          blocks
+ [ 07-15-2024  21:54:06.669 ] [IO_writePlotfile] close: type=plotfile name=INS_Flow_Boiling_hdf5_plt_cnt_0065
+ [ 07-15-2024  21:54:06.679 ] memory: /proc vsize    (MB):      430.75 (min)      13811.13 (max)       7909.43 (avg)
+ [ 07-15-2024  21:54:06.690 ] memory: /proc rss      (MB):      125.79 (min)        139.95 (max)        129.72 (avg)
+ ==============================================================================
+ perf_summary: code performance summary for process            0
+                      beginning : 07-15-2024  20:20:54
+                         ending : 07-15-2024  21:54:06
+   seconds in monitoring period :             5591.870
+      number of evolution steps :               101143
+ ------------------------------------------------------------------------------
+ accounting unit                       time sec  num calls   secs avg  time pct
+ ------------------------------------------------------------------------------
+ initialization                          1.347      1           1.347     0.024
+  IO_readCheckpoint                      0.604      1           0.604     0.011
+  gr_multigridAmrexInit                  0.000      1           0.000     0.000
+  writePlotfile                          0.226      1           0.226     0.004
+   io_writeGrid                          0.008      1           0.008     0.000
+ writePlotfile                           0.316      1           0.316     0.006
+ evolution                            5590.160      1        5590.160    99.969
+  guardcell internal                   580.196 ******           0.000    10.376
+   amr_guardcell                       578.644 ******           0.000    10.348
+    gc unk                             447.903 ******           0.000     8.010
+    gc facevars                        129.975 303430           0.000     2.324
+  Heater_mapSitesToProc                  0.009      1           0.009     0.000
+  Multiphase_reInitGridVars             60.914 ******           0.000     1.089
+  IncompNS_reInitGridVars              167.616 ******           0.000     2.997
+  HeatAD_reInitGridVars                 47.303 ******           0.000     0.846
+  Heater_checkSites                      7.360 ******           0.000     0.132
+  Heater_tagSites                        0.098 101143           0.000     0.002
+  Heater_lsReInit                       22.345 ******           0.000     0.400
+  Multiphase_setFluidProps             184.476 ******           0.000     3.299
+  Multiphase_setThermalProp             10.325 ******           0.000     0.185
+  Multiphase_setPressureJum             35.549 ******           0.000     0.636
+  Multiphase_thermalForcing             50.845 ******           0.000     0.909
+  Multiphase_extrapFluxes              170.479 ******           0.000     3.049
+  Multiphase_setMassFlux                 6.662 ******           0.000     0.119
+  Outlet_setForcing                    318.097 ******           0.000     5.689
+  IncompNS_advection                    36.691 ******           0.000     0.656
+  IncompNS_diffusion                    40.414 ******           0.000     0.723
+  IncompNS_predictor                    42.191 ******           0.000     0.755
+  IncompNS_divergence                   33.709 ******           0.000     0.603
+  Multiphase_divergence                 69.966 ******           0.000     1.251
+  IncompNS_setupPoisson                 95.860 ******           0.000     1.714
+  Grid_solvePoisson                   2133.294 101143           0.021    38.150
+  IncompNS_corrector                   114.137 ******           0.000     2.041
+  HeatAD_diffusion                      17.550 ******           0.000     0.314
+  HeatAD_advection                     179.049 ******           0.000     3.202
+  HeatAD_solve                          11.995 ******           0.000     0.215
+  Multiphase_advection                 211.444 ******           0.000     3.781
+  Multiphase_solve                       8.977 ******           0.000     0.161
+  Multiphase_redistance                 68.586 ******           0.000     1.227
+  IO_output                            263.474 101143           0.003     4.712
+   diagnostics                           0.067 101143           0.000     0.001
+   plotfile                              4.523     30           0.151     0.081
+    writePlotfile                        4.407     30           0.147     0.079
+  io                                   235.663 101143           0.002     4.214
+   diagnostics                           0.036 101143           0.000     0.001
+   checkpointing                         3.289     15           0.219     0.059
+    writeCheckpoint                      3.229     15           0.215     0.058
+ ==============================================================================
+ ==============================================================================
+ perf_summary: code performance summary statistics
+                      beginning : 07-15-2024  20:20:54
+                         ending : 07-15-2024  21:54:06
+   seconds in monitoring period :             5591.870
+      number of evolution steps :               101143
+ ------------------------------------------------------------------------------
+ accounting unit                  max/proc (s)  min/proc (s) avg/proc (s)   num calls
+ ------------------------------------------------------------------------------
+ initialization                          1.347         1.345        1.346           1
+  IO_readCheckpoint                      0.614         0.604        0.613           1
+  gr_multigridAmrexInit                  0.000         0.000        0.000           1
+  writePlotfile                          0.229         0.226        0.226           1
+   io_writeGrid                          0.008         0.000        0.001           1
+ writePlotfile                           0.319         0.316        0.317           1
+ evolution                            5590.165      5590.160     5590.164           1
+  guardcell internal                  1180.524       559.159      716.216     1416003
+   amr_guardcell                      1179.646       557.533      714.839     1416003
+    gc unk                             993.276       414.770      563.162     1314860
+    gc facevars                        187.938       129.975      150.988      303430
+  Heater_mapSitesToProc                  0.009         0.008        0.009           1
+  Multiphase_reInitGridVars             61.002        17.395       51.131    10114300
+  IncompNS_reInitGridVars              170.522        44.153      141.532    10114300
+  HeatAD_reInitGridVars                 47.436        13.357       39.672    10114300
+  Heater_checkSites                     13.170         6.239        9.436    10114300
+  Heater_tagSites                        0.371         0.085        0.131      101143
+  Heater_lsReInit                       24.777        19.930       22.815    10114300
+  Multiphase_setFluidProps             192.964       138.364      178.402    10114300
+  Multiphase_setThermalProp             10.593         7.580        9.692    10114300
+  Multiphase_setPressureJum             48.103        22.898       38.537    10114300
+  Multiphase_thermalForcing             60.446        30.641       50.645    10114300
+  Multiphase_extrapFluxes              188.438       157.595      170.820    50571500
+  Multiphase_setMassFlux                 7.102         6.430        6.640    10114300
+  Outlet_setForcing                    323.741       314.417      320.801    10114300
+  IncompNS_advection                    41.631        27.837       35.237    10114300
+  IncompNS_diffusion                    41.660        23.277       37.107    10114300
+  IncompNS_predictor                    43.394        31.963       39.991    10114300
+  IncompNS_divergence                   36.867        19.518       31.197    20228600
+  Multiphase_divergence                 72.054        24.604       60.727    20228600
+  IncompNS_setupPoisson                 96.988        50.827       86.014    10114300
+  Grid_solvePoisson                   2138.418      2119.162     2128.337      101143
+  IncompNS_corrector                   117.669        31.497       97.685    10114300
+  HeatAD_diffusion                      18.611        14.430       16.969    10114300
+  HeatAD_advection                     180.640       173.292      178.204    10114300
+  HeatAD_solve                          12.267        10.774       11.778    10114300
+  Multiphase_advection                 216.881       193.685      209.352    10114300
+  Multiphase_solve                       9.477         7.794        8.802    10114300
+  Multiphase_redistance                 70.877        67.928       68.606    20228600
+  IO_output                            264.452       263.474      264.330      101143
+   diagnostics                           0.077         0.059        0.069      101143
+   plotfile                              4.523         4.392        4.408          30
+    writePlotfile                        4.412         4.391        4.395          30
+  io                                   236.982       235.663      236.812      101143
+   diagnostics                           0.042         0.036        0.037      101143
+   checkpointing                         3.289         3.220        3.228          15
+    writeCheckpoint                      3.229         3.219        3.221          15
+ ==============================================================================
+ [ 07-15-2024  21:54:06.718 ] LOGFILE_END: FLASH run complete.

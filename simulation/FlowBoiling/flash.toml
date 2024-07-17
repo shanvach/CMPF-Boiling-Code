@@ -3,13 +3,13 @@
 
 [Heater]
   htr_heaterName = "flow_boiling"
-  htr_numHeaters = 1
+  htr_numHeaters = 2
   htr_nucSeedRadius = 0.1
 
 [Heater.0001]
   dim = 1
-  xmin = -4.0
-  xmax = 4.0
+  xmin = -24.0
+  xmax = 24.0
   ymin = 0.0
   ymax = 1e-13
   zmin = -2.5
@@ -19,7 +19,23 @@
   rcdAngle = 45.0
   velContact = 0.2
   nucWaitTime = 0.4
-  numSites = 60
+  numSites = 300
+
+[Heater.0002]
+  dim = 1
+  xmin = -24.0
+  xmax = 24.0
+  ymin = 49999888888888e-13
+  ymax = 5.0
+  zmin = -2.5
+  zmax = 2.5
+  wallTemp = 1.0
+  advAngle = 90.0
+  rcdAngle = 45.0
+  velContact = 0.2
+  nucWaitTime = 0.4
+  numSites = 300
+
 
 [Logfile]
   run_comment = "Flow Boiling problem"
@@ -27,19 +43,19 @@
 
 [Grid]
   geometry = "cartesian"
-  xmin = -5.0
-  xmax =  5.0
+  xmin = -25.0
+  xmax =  25.0
   ymin = 0.0
-  ymax = 2.5
+  ymax = 5.0
   xl_boundary_type = "inflow_ins"
   xr_boundary_type = "outflow_ins"
   yl_boundary_type = "noslip_ins"
-  yr_boundary_type = "slip_ins"
+  yr_boundary_type = "noslip_ins"
   gr_amrexMG_composite_solve = true
-  gr_amrexMG_Tol = 1.0e-13
+  gr_amrexMG_Tol = 1.0e-9
   gr_amrexMG_max_iter = 200
-  nblockx = 20
-  nblocky = 5
+  nblockx = 100
+  nblocky = 10
   nrefs = 10000000
   lrefine_min = 1
   lrefine_max = 1
@@ -79,9 +95,9 @@
   ht_Prandtl = 8.4
 
 [Driver]
-  restart = false
+  restart = true
   nend = 1200000
-  tmax = 10
+  tmax = 30
   dtinit = 0.1e-3
   dtmax = 0.4e-3
   tstep_change_factor = 1.01
@@ -90,10 +106,10 @@
 [IO]
   basenm = "INS_Flow_Boiling_"
   checkpointFileIntervalTime = 1.0
-  plotFileIntervalTime = 0.1
-  checkpointFileNumber = 0
-  rolling_checkpoint = 2
-  plotFileNumber = 0
+  plotFileIntervalTime = 0.5
+  checkpointFileNumber = 15
+  rolling_checkpoint = 150
+  plotFileNumber = 34
   plot_var_1 = "pres"
   plot_var_2 = "velx"
   plot_var_3 = "vely"

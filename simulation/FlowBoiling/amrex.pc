@@ -1,0 +1,17 @@
+# AMReX Version: 23.11
+
+prefix=/home/svachhan/Flash-X-Demo/software/amrex/AMReX/install-zaratan.umd.edu/2D
+exec_prefix=${prefix}
+libdir=${prefix}/lib
+includedir=${prefix}/include
+
+fflags= -g -O3 -ffree-line-length-none -fno-range-check -fno-second-underscore -fimplicit-none  
+
+Name: amrex
+Description: Software Framework for Block Structured AMR
+Version:
+URL: https://github.com/AMReX-Codes/amrex
+Requires:
+Cflags: -I${includedir}  -Werror=return-type -g -O3 -std=c++17  -pthread  
+Libs: -L${libdir} -lamrex -L/cvmfs/hpcsw.umd.edu/spack-software/2022.06.15/linux-rhel8-x86_64/gcc-rh8-8.5.0/gcc-9.4.0-nhsmtafwu6bon6dqqece2uzo5fdebofi/lib64/../lib64/  -fexceptions -pthread -I/cvmfs/hpcsw.umd.edu/spack-software/2022.06.15/linux-rhel8-zen2/gcc-9.4.0/openmpi-4.1.1-hm2fkyfi7d5ggq4hg2xn4dtzf2o5r2rx/lib -L/cvmfs/hpcsw.umd.edu/spack-software/2022.06.15/linux-rhel8-zen2/gcc-9.4.0/hwloc-2.6.0-n4n56xfiv3ln5c5c6z6atq4gmbz2ctdh/lib -L/usr/lib64 -L/cvmfs/hpcsw.umd.edu/spack-software/2022.06.15/linux-rhel8-zen2/gcc-9.4.0/libevent-2.1.8-xqlb5yiqmuktjufma4jseozncaswvndp/lib -Wl,-rpath,/cvmfs/hpcsw.umd.edu/spack-software/2022.06.15/linux-rhel8-x86_64/gcc-rh8-8.5.0/gcc-9.4.0-nhsmtafwu6bon6dqqece2uzo5fdebofi/lib/gcc/x86_64-pc-linux-gnu/9.4.0 -Wl,-rpath,/cvmfs/hpcsw.umd.edu/spack-software/2022.06.15/linux-rhel8-x86_64/gcc-rh8-8.5.0/gcc-9.4.0-nhsmtafwu6bon6dqqece2uzo5fdebofi/lib64 -Wl,-rpath -Wl,/cvmfs/hpcsw.umd.edu/spack-software/2022.06.15/linux-rhel8-zen2/gcc-9.4.0/hwloc-2.6.0-n4n56xfiv3ln5c5c6z6atq4gmbz2ctdh/lib -Wl,-rpath -Wl,/usr/lib64 -Wl,-rpath -Wl,/cvmfs/hpcsw.umd.edu/spack-software/2022.06.15/linux-rhel8-zen2/gcc-9.4.0/libevent-2.1.8-xqlb5yiqmuktjufma4jseozncaswvndp/lib -Wl,-rpath -Wl,/cvmfs/hpcsw.umd.edu/spack-software/2022.06.15/linux-rhel8-zen2/gcc-9.4.0/openmpi-4.1.1-hm2fkyfi7d5ggq4hg2xn4dtzf2o5r2rx/lib -L/cvmfs/hpcsw.umd.edu/spack-software/2022.06.15/linux-rhel8-zen2/gcc-9.4.0/openmpi-4.1.1-hm2fkyfi7d5ggq4hg2xn4dtzf2o5r2rx/lib -lmpi_usempif08 -lmpi_usempi_ignore_tkr -lmpi_mpifh -lmpi -lmpi_cxx -lmpi -lgfortran -lquadmath
+Libs.private: 
