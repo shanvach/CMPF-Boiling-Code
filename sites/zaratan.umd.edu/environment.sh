@@ -1,6 +1,7 @@
 
 #module load intel/2021.4.0
-module load gcc/9.4.0
+#module load gcc/9.4.0
+module load python/3.10.10/
 # Load MPI module. This should be available as standard module on a cluster.
 # If not, build your own MPI and update PATH, LD_LIBRARY_PATH
 #module load openmpi-4.1.1

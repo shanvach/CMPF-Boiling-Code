@@ -89,15 +89,15 @@ else
 
 # GNU Flags:
 FFLAGS_OPT =  -c -O3 -fdefault-real-8 -fdefault-double-8 \
--ffree-line-length-none -Wuninitialized
+-ffree-line-length-none -Wuninitialized -fallow-argument-mismatch
 FFLAGS_DEBUG = -ggdb -c -fdefault-real-8 -fdefault-double-8 \
 -ffree-line-length-none -pedantic -Wall -Wextra -Waliasing \
 -Wsurprising -Wconversion -Wunderflow \
 -ffpe-trap=invalid,zero,overflow -fbounds-check \
 -fbacktrace -fdump-core -finit-real=nan \
--finit-integer=-999999 -fimplicit-none
+-finit-integer=-999999 -fimplicit-none -fallow-argument-mismatch
 FFLAGS_TEST =  -c -fdefault-real-8 -fdefault-double-8 \
--ffree-line-length-none
+-ffree-line-length-none -fallow-argument-mismatch
 
 CFLAGS_OPT   = -c -O3
 CFLAGS_DEBUG = -c -g
