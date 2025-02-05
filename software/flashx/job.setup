@@ -2,15 +2,15 @@
 
 set -e
 
-export JobWorkDir="/home/svachhan/Flash-X-Demo/software/flashx"
+export JobWorkDir="/scratch/zt1/project/ariaz-prj/user/svachhan/CMPF-Boiling-Code/software/flashx"
 
-cd /home/svachhan/Flash-X-Demo
+cd /scratch/zt1/project/ariaz-prj/user/svachhan/CMPF-Boiling-Code
 
 # This file is generated using configuration script
 SiteName="zaratan.umd.edu"
 Profile=False
 
-cd /home/svachhan/Flash-X-Demo
+cd /scratch/zt1/project/ariaz-prj/user/svachhan/CMPF-Boiling-Code
 
 # Bash file to load modules and set environment
 # variables for compilers and external libraries
@@ -57,10 +57,10 @@ echo "LD_LIBRARY_PATH=$LD_LIBRARY_PATH"
 echo "PATH=$PATH"
 echo "---------------------------------------------------------------------------------------"
 
-cd /home/svachhan/Flash-X-Demo/software/flashx
+cd /scratch/zt1/project/ariaz-prj/user/svachhan/CMPF-Boiling-Code/software/flashx
 
 # Setup Flash-X
 if [ ! -d "Flash-X" ]; then
-	git clone git@github.com:Flash-X/Flash-X --branch main Flash-X && cd Flash-X
+	git clone git@github.com:Flash-X/Flash-X --branch shanvach/incomp-heater-updates Flash-X && cd Flash-X
         git submodule update --init --recursive
 fi

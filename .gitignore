@@ -14,7 +14,6 @@ __pycache__
 *.ipynb_checkpoints
 config.sh
 software/amrex/AMReX
-software/flashx/Flash-X
 software/flashkit/FlashKit
 software/hdf5/HDF5
 boxmem

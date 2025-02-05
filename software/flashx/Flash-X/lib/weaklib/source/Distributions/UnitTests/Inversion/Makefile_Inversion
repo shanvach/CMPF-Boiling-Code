@@ -1,0 +1,44 @@
+WEAKLIB_DIR ?= $(HOME)/weaklib
+include $(WEAKLIB_DIR)/Distributions/Build/Makefile_Build
+include $(WEAKLIB_DIR)/Distributions/Build/Makefile_WeakLib_ObjectFiles
+include $(WEAKLIB_DIR)/Distributions/Build/Makefile_WeakLib_Dependencies
+
+.DEFAULT_GOAL := all
+
+all: wlEosInversionTest
+
+wlEosInversionTest: \
+	$(weaklib) wlEosInversionTest.o
+	$(FLINKER) $(FLAGS) -o wlEosInversionTest_$(MACHINE) \
+	$(weaklib) wlEosInversionTest.o \
+	$(LIBRARIES)
+
+wlEosInversionQuery: \
+	$(weaklib) wlEosInversionQuery.o
+	$(FLINKER) $(FLAGS) -o wlEosInversionQuery_$(MACHINE) \
+	$(weaklib) wlEosInversionQuery.o \
+	$(LIBRARIES)
+
+clean:
+	rm -f *.o *.mod *.ld
+
+clobber: clean
+	rm -f wlEosInversionTest_$(MACHINE)
+
+wlEosInversionTest.o: \
+  wlKindModule.o \
+  wlEquationOfStateTableModule.o \
+  wlIOModuleHDF.o \
+  wlEOSIOModuleHDF.o \
+  wlInterpolationModule.o \
+  wlEOSInversionModule.o \
+  wlEosInversionTest.F90
+
+wlEosInversionQuery.o: \
+  wlKindModule.o \
+  wlEquationOfStateTableModule.o \
+  wlIOModuleHDF.o \
+  wlEOSIOModuleHDF.o \
+  wlInterpolationModule.o \
+  wlEOSInversionModule.o \
+  wlEosInversionQuery.F90

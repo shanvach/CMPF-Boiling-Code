@@ -1,0 +1,73 @@
+# Config file for Core Collapse SN setup.
+REQUIRES Driver
+REQUIRES Grid
+REQUIRES physics/Hydro/HydroMain 
+
+# Composition
+USESETUPVARS xnet
+IF xnet # Sets up species variables even when setting useBurn to False in flash.par
+   REQUIRES physics/sourceTerms/Burn/BurnMain/nuclearBurn
+ENDIF
+REQUIRES Simulation/SimulationComposition #Note: Links in a limited SpeciesList.txt
+REQUIRES Multispecies
+
+# I/O
+REQUESTS IO
+REQUESTS IO/IOMain/hdf5
+
+# EoS
+REQUIRES physics/Eos/EosMain/Helmholtz
+
+# Gravity (pick PointMass or Multipole)
+#REQUESTS physics/Gravity/GravityMain/PointMass
+REQUESTS physics/Gravity/GravityMain/Poisson/Multipole
+
+LINKIF Gravity_init.F90.pointmass physics/Gravity/GravityMain/PointMass
+LINKIF gr_mpoleData.F90 Grid/GridSolvers/Multipole_new
+LINKIF gr_mpoleInit.F90 Grid/GridSolvers/Multipole_new
+LINKIF gr_mpolePot2Dcylindrical.F90 Grid/GridSolvers/Multipole_new
+LINKIF Grid_markRefineDerefine.F90 Grid/GridMain/AMR/Paramesh4
+
+# PNS Cutout
+USESETUPVARS fakePNS
+IF fakePNS
+   VARIABLE BDRY #For "cutting out" the PNS with fake data
+ENDIF
+
+# params for initialization
+D chimera_model_file    	Name of input file with chimera model
+PARAMETER chimera_model_file	STRING ""
+D progenitor_model_file 	Name of input file with 1D progenitor model
+PARAMETER progenitor_model_file	STRING ""
+
+D max_r  	                max radius to use chimera data
+PARAMETER max_r	                REAL 0.0
+D r_inner	                inner radius boundary for chimera data
+PARAMETER r_inner               REAL 0.0
+
+D mpole_PtXpos                  x position for point mass (Currently only for 2dCyl)
+PARAMETER mpole_PtXpos          REAL 0.0
+D mpole_PtYpos                  y position for point mass (Currently only for 2dCyl)
+PARAMETER mpole_PtYpos          REAL 0.0
+D mpole_PtZpos                  z position for point mass (Currently only for 2dcyl)
+PARAMETER mpole_PtZpos          REAL 0.0
+
+D bdry_dens                     density in BDRY region (fake PNS region)
+PARAMETER bdry_dens             REAL 1.0E-8
+D bdry_pres                     pressure in BDRY region (fake PNS region)
+PARAMETER bdry_pres             REAL 1.0E-15
+D bdry_temp                     temperature in BDRY region (fake PNS region)
+PARAMETER bdry_temp             REAL 1.0E3
+
+# Extra variables
+VARIABLE SHOK
+
+D entr_variable Specific entropy, for analysis and visualization
+VARIABLE entr TYPE: PER_MASS    EOSMAPOUT: ENTR
+
+DATAFILES d96InitModel.txt
+
+# These would allow use to use the "Ye" mode of Helmholtz if we want
+MASS_SCALAR YE
+MASS_SCALAR SUMY
+

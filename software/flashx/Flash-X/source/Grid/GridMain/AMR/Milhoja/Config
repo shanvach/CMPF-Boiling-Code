@@ -1,0 +1,63 @@
+##python3:genLines
+
+def genLines(setupvars):
+    # While the Milhoja Grid unit implementation can be used successfully for
+    # some simulations, it is missing a great deal of functionality.  Therefore,
+    # its integration in Flash-X is a work in progress and users should not use
+    # it.
+    # TODO: Remove this once enough functionality has been implemented with
+    # associated tests in the test suite.
+    yield 'UNOFFICIAL'
+
+    yield 'PPDEFINE FLASH_GRID_MILHOJA'
+
+    yield 'CONFLICTS IO/IOMain/hdf5/parallel/UG'
+    yield 'CONFLICTS IO/IOMain/hdf5/serial/UG'
+    yield 'CONFLICTS IO/IOMain/hdf5/parallel/PM'
+    yield 'CONFLICTS IO/IOMain/hdf5/serial/PM'
+    yield 'CONFLICTS IO/IOMain/hdf5/parallel/AM'
+    yield 'CONFLICTS IO/IOMain/hdf5/serial/AM'
+
+    # We need a Milhoja-specific BC implementation just to get Milhoja-base
+    # Simulations to build.  They don't do anything important since BCs are not
+    # integrated with Milhoja.
+    # TODO: Remove this once BCs are integrated with Milhoja
+    yield 'REQUIRES Grid/GridBoundaryConditions/Milhoja'
+
+    if 'Milhoja' not in setupvars:
+        yield 'SETUPERROR Milhoja setup variable not set'
+    elif 'withOrchestration' not in setupvars:
+        yield 'SETUPERROR withOrchestration not in setup variables'
+    elif setupvars['withOrchestration']:
+        yield 'D gr_initBlock_nCpuThreads  N threads to be activated in a thread team'
+        yield 'D & for setting ICs with the CPU (Orchestration only)'
+        yield 'PARAMETER gr_initBlock_nCpuThreads INTEGER 1 [ 1 ... ]'
+
+    # Users must specify runtime variant
+    #   - (grid backend, runtime backend, offloading)
+    #   - assume that the Milhoja Orchestration implementation gets its values independently (if used)
+    milhoja = [e.lower() for e in setupvars['Milhoja'].split(',')]
+    if   len(milhoja) == 1:
+        grid_backend = milhoja[0]
+    elif len(milhoja) == 3:
+        grid_backend, _, _ = milhoja
+    else:
+        yield 'SETUPERROR Invalid N Milhoja specification values'
+
+    if grid_backend == 'amrex':
+        yield 'PPDEFINE GRID_USE_AMREX_BACKEND'
+        yield 'LIBRARY milhoja_amrex'
+
+        yield 'D amrexInterpolator Name of AMReX interpolator to use for interpolating'
+        yield 'D & cell-centered data.  Please refer to AMReX documentation for more'
+        yield 'D & information.'
+        yield 'D & CELL_CONSERVATIVE_LINEAR'
+        yield 'D & CELL_CONSERVATIVE_PROTECTED'
+        yield 'D & CELL_CONSERVATIVE_QUARTIC'
+        yield 'D & CELL_BILINEAR'
+        yield 'D & CELL_QUADRATIC'
+        yield 'D & CELL_PIECEWISE_CONSTANT'
+        yield 'PARAMETER amrexInterpolator STRING "CELL_CONSERVATIVE_LINEAR"'
+    else:
+        yield f'SETUPERROR Invalid Milhoja grid backend {grid_backend}'
+

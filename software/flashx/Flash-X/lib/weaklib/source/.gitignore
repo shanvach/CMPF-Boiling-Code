@@ -1,0 +1,35 @@
+# latex intermediates
+*.aux
+*.log
+*.dvi
+*.bbl
+*.blg
+*.out
+*.pdf
+*.synctex.gz
+*.toc
+
+# emacs temporaries
+*~
+
+# thornado output files
+*.h5
+
+# compiled code
+*.a
+*.o
+*.mod
+*.lst
+*.ptx
+*.dSYM
+*.acc.s
+*.i
+pgipar*
+
+# Sam's files to ignore
+*.DS_Store
+*main*ex
+*tmp_build_dir
+
+# core dumps
+core*

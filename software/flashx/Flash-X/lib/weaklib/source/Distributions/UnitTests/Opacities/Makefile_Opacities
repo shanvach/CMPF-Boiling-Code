@@ -1,0 +1,85 @@
+WEAKLIB_DIR ?= $(HOME)/weaklib
+include $(WEAKLIB_DIR)/Distributions/Build/Makefile_Build
+include $(WEAKLIB_DIR)/Distributions/Build/Makefile_WeakLib_ObjectFiles
+include $(WEAKLIB_DIR)/Distributions/Build/Makefile_WeakLib_Dependencies
+include $(WEAKLIB_DIR)/TableCreator/Build/Makefile_Path
+include $(WEAKLIB_DIR)/TableCreator/Build/Makefile_WeakLib_ObjectFiles
+
+.DEFAULT_GOAL := all
+
+all: wlOpacityFieldsTest \
+     wlReadOpacityTableTest \
+     wlOpacityPerformanceTest \
+     wlInterpolateAb \
+     wlInterpolateIso \
+     wlInterpolateNES \
+     wlInterpolatePair \
+     wlInterpolateBrem
+
+Interpolations: wlInterpolateAb   \
+                wlInterpolateIso  \
+                wlInterpolateNES  \
+                wlInterpolatePair \
+		wlInterpolateBrem
+
+wlOpacityFieldsTest: \
+	$(weaklib) wlOpacityFieldsTest.o
+	$(FLINKER) $(FLAGS) -o wlOpacityFieldsTest_$(MACHINE) \
+	$(weaklib) wlOpacityFieldsTest.o \
+	$(LIBRARIES)
+
+wlReadOpacityTableTest: \
+	$(weaklib) wlReadOpacityTableTest.o
+	$(FLINKER) $(FLAGS) -o wlReadOpacityTableTest_$(MACHINE) \
+	$(weaklib) wlReadOpacityTableTest.o \
+	$(LIBRARIES)
+
+wlOpacityPerformanceTest: \
+	$(weaklib) wlOpacityPerformanceTest.o
+	$(FLINKER) $(FLAGS) -o wlOpacityPerformanceTest_$(MACHINE) \
+	$(weaklib) wlOpacityPerformanceTest.o \
+	$(LIBRARIES)
+
+wlInterpolateAb: \
+        $(weaklib) wlInterpolateAb.o
+	$(FLINKER) $(FLAGS) -o wlInterpolateAb_$(MACHINE) \
+        $(weaklib) wlInterpolateAb.o \
+        $(LIBRARIES)
+
+wlInterpolateIso: \
+        $(Weaklib_TableCreator) wlInterpolateIso.o
+	$(FLINKER) $(FLAGS) -o wlInterpolateIso_$(MACHINE) \
+        $(weaklib) wlInterpolateIso.o \
+        $(LIBRARIES)
+
+wlInterpolateNES: \
+	$(Weaklib_TableCreator) wlInterpolateNES.o
+	$(FLINKER) $(FLAGS) -o wlInterpolateNES_$(MACHINE) \
+        $(Weaklib_TableCreator) wlInterpolateNES.o \
+        $(LIBRARIES)
+
+wlInterpolatePair: \
+        $(Weaklib_TableCreator) wlInterpolatePair.o
+	$(FLINKER) $(FLAGS) -o wlInterpolatePair_$(MACHINE) \
+        $(Weaklib_TableCreator) wlInterpolatePair.o \
+        $(LIBRARIES)
+
+wlInterpolateBrem: \
+        $(Weaklib_TableCreator) wlInterpolateBrem.o
+	$(FLINKER) $(FLAGS) -o wlInterpolateBrem_$(MACHINE) \
+	$(Weaklib_TableCreator) wlInterpolateBrem.o \
+	$(LIBRARIES)
+
+clean:
+	rm -f *.o *.mod *.ld *.acc.s
+
+clobber: clean
+	rm -f *_$(MACHINE)
+
+wlOpacityPerformanceTest.o: \
+  wlKindModule.o \
+  wlOpacityTableModule.o \
+  wlIOModuleHDF.o \
+  wlOpacityTableIOModuleHDF.o \
+  wlInterpolationModule.o \
+  wlOpacityPerformanceTest.F90

@@ -1,0 +1,9 @@
+USESETUPVARS Grid
+
+IF Grid in ["","PM4DEV","PM40","PM3","PM2"]
+   REQUIRES ./pm
+ENDIF
+
+IF Grid == "Amrex"
+   REQUIRES ./am
+ENDIF

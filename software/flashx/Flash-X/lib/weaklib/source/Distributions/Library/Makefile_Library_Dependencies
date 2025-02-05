@@ -1,0 +1,29 @@
+wlKindModule.o: \
+  wlKindModule.f90
+
+wlGridModule.o: \
+  wlKindModule.o \
+  wlGridModule.f90
+
+wlThermoStateModule.o: \
+  wlKindModule.o \
+  wlThermoStateModule.f90
+
+wlDependentVariablesModule.o: \
+  wlKindModule.o \
+  wlDependentVariablesModule.f90
+
+wlInterpolationUtilitiesModule.o: \
+  wlKindModule.o \
+  wlInterpolationUtilitiesModule.F90
+
+wlInterpolationModule.o: \
+  wlKindModule.o \
+  wlInterpolationUtilitiesModule.o \
+  wlInterpolationModule.F90
+
+wlIOModuleHDF.o: \
+  wlKindModule.o \
+  wlThermoStateModule.o \
+  wlDependentVariablesModule.o \
+  wlIOModuleHDF.f90

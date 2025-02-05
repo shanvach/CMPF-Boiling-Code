@@ -12,10 +12,10 @@ else
 fi
 
 # configure and install amrex in 2D
-#make clean || true
-#./configure --dim=2 --prefix=$AMREX2D_HOME
-#make
-#make install
+make clean || true
+./configure --dim=2 --prefix=$AMREX2D_HOME
+make
+make install
 
 # configure and install amrex in 3D
 make clean || true

@@ -1,0 +1,87 @@
+# The content below is programmatically generated from tomlfile. Copy before editing.
+
+# Runtime parameters for Heater
+htr_heaterName = "pool_boiling"
+htr_numHeaters = 1
+htr_nucSeedRadius = 0.068
+
+# Runtime parameters for Logfile
+run_comment = "Pool Boiling problem"
+log_file = "INS_Pool_Boiling.log"
+
+# Runtime parameters for Grid
+geometry = "cartesian"
+xmin = -1.0
+xmax = 1.0
+ymin = 0.0
+ymax = 2.0
+xl_boundary_type = "slip_ins"
+xr_boundary_type = "slip_ins"
+yl_boundary_type = "noslip_ins"
+yr_boundary_type = "outflow_ins"
+gr_amrexMG_composite_solve = .TRUE.
+gr_amrexMG_Tol = 1e-10
+gr_amrexMG_max_iter = 200
+nblockx = 15
+nblocky = 15
+nrefs = 10000000
+lrefine_min = 1
+lrefine_max = 1
+flux_correct = .TRUE.
+enableMaskedGCFill = .TRUE.
+
+# Runtime parameters for IncompNS
+ins_invReynolds = 0.004623
+ins_inflowVelScale = 0.0
+ins_gravY = -1.0
+ins_cflFlg = 0
+ins_cfl = 0.05
+ins_sigma = 0.05
+ins_dtSpec = 0.0001
+ins_pressureCorrect = .FALSE.
+ins_intSchm = 2
+ins_advSchm = 2
+
+# Runtime parameters for Outlet
+out_buffer = 0.1
+
+# Runtime parameters for Simulation
+sim_lengthScaleMeters = 0.001
+sim_timeScaleSeconds = 0.01
+
+# Runtime parameters for Multiphase
+mph_rhoGas = 0.0083542
+mph_muGas = 0.02727
+mph_iPropSmear = 1.5
+mph_invWeber = 0.9916
+mph_thcoGas = 0.2384
+mph_CpGas = 0.8119
+mph_Stefan = 0.1574
+mph_Tsat = 0.0
+
+# Runtime parameters for HeatAD
+ht_Prandtl = 8.9545
+
+# Runtime parameters for Driver
+restart = .FALSE.
+nend = 120000000
+tmax = 2.35
+dtinit = 0.0001
+dtmax = 0.0004
+tstep_change_factor = 1.01
+wall_clock_time_limit = -1
+
+# Runtime parameters for IO
+basenm = "INS_Pool_Boiling_"
+checkpointFileIntervalTime = 5
+plotFileIntervalTime = 0.05
+checkpointFileNumber = 0
+rolling_checkpoint = 150
+plotFileNumber = 0
+plot_var_1 = "pres"
+plot_var_2 = "velx"
+plot_var_3 = "vely"
+plot_var_4 = "dfun"
+plot_var_5 = "temp"
+plot_var_6 = "mflx"
+ignoreForcedPlot = .TRUE.

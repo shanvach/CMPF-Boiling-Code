@@ -1,0 +1,17 @@
+# AMReX Version: 23.11
+
+prefix=/scratch/zt1/project/ariaz-prj/user/svachhan/CMPF-Boiling-Code/software/amrex/AMReX/install-zaratan.umd.edu/2D
+exec_prefix=${prefix}
+libdir=${prefix}/lib
+includedir=${prefix}/include
+
+fflags= -g -O3 -ffree-line-length-none -fno-range-check -fno-second-underscore -fimplicit-none  
+
+Name: amrex
+Description: Software Framework for Block Structured AMR
+Version:
+URL: https://github.com/AMReX-Codes/amrex
+Requires:
+Cflags: -I${includedir}  -Werror=return-type -gdwarf-4 -O3 -std=c++17  -pthread  
+Libs: -L${libdir} -lamrex -L/cvmfs/hpcsw.umd.edu/spack-software/2023.11.20/linux-rhel8-x86_64/gcc-rh8-8.5.0/gcc-11.3.0-oedkmii7vhd6rbnqm6xufmg7d3jx4w6l/lib64/../lib64/  -fexceptions -pthread -I/cvmfs/hpcsw.umd.edu/spack-software/2023.11.20/linux-rhel8-zen2/gcc-11.3.0/openmpi-4.1.5-enhf6gmjrfwdvbhsjrnehbkk6z2jijmu/lib -L/cvmfs/hpcsw.umd.edu/spack-software/2023.11.20/linux-rhel8-zen2/gcc-11.3.0/openmpi-4.1.5-enhf6gmjrfwdvbhsjrnehbkk6z2jijmu/lib -L/cvmfs/hpcsw.umd.edu/spack-software/2023.11.20/linux-rhel8-zen2/gcc-11.3.0/hwloc-2.9.1-2ddwljzkoz4zqrtecxqfxskslj7dbk23/lib -Wl,-rpath,/cvmfs/hpcsw.umd.edu/spack-software/2023.11.20/linux-rhel8-x86_64/gcc-rh8-8.5.0/gcc-11.3.0-oedkmii7vhd6rbnqm6xufmg7d3jx4w6l/lib/gcc/x86_64-pc-linux-gnu/11.3.0 -Wl,-rpath,/cvmfs/hpcsw.umd.edu/spack-software/2023.11.20/linux-rhel8-x86_64/gcc-rh8-8.5.0/gcc-11.3.0-oedkmii7vhd6rbnqm6xufmg7d3jx4w6l/lib64 -Wl,-rpath -Wl,/cvmfs/hpcsw.umd.edu/spack-software/2023.11.20/linux-rhel8-zen2/gcc-11.3.0/openmpi-4.1.5-enhf6gmjrfwdvbhsjrnehbkk6z2jijmu/lib -Wl,-rpath -Wl,/cvmfs/hpcsw.umd.edu/spack-software/2023.11.20/linux-rhel8-zen2/gcc-11.3.0/hwloc-2.9.1-2ddwljzkoz4zqrtecxqfxskslj7dbk23/lib -lmpi_usempif08 -lmpi_usempi_ignore_tkr -lmpi_mpifh -lmpi -lmpi_cxx -lmpi -lgfortran -lquadmath
+Libs.private: 

@@ -1,0 +1,8 @@
+Setup syntax for 3D, Order(v/c) (CPU):
+./setup StreamingSineWave -auto -3d +cartesian -nxb=16 -nyb=16 -nzb=16 +pm4dev Bittree=True +parallelIO +uhd swE=1 nE=2 nSpecies=1 nNodes=2 nMoments=4 momentClosure=MINERBO thornadoOrder=ORDER_V
+
+Setup syntax for 3D, Order(v/c) (NVIDIA GPU):
+./setup StreamingSineWave -auto -3d +cartesian -nxb=16 -nyb=16 -nzb=16 +pm4dev Bittree=True +parallelIO +uhd swE=1 nE=2 nSpecies=1 nNodes=2 nMoments=4 momentClosure=MINERBO thornadoOrder=ORDER_V +thornadoACC +thornadoNVIDIA
+
+For AMR test:
+./setup StreamingSineWave -auto -3d +cartesian -nxb=16 -nyb=16 -nzb=16 +pm4dev Bittree=True +parallelIO +uhd swE=1 nE=2 nSpecies=1 nNodes=2 nMoments=4 momentClosure=MINERBO thornadoOrder=ORDER_V -parfile=test_amr_3d.par

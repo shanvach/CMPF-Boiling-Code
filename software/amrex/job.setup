@@ -2,15 +2,15 @@
 
 set -e
 
-export JobWorkDir="/scratch/zt1/project/ariaz-prj/user/svachhan/Flash-X-Demo/software/amrex"
+export JobWorkDir="/scratch/zt1/project/ariaz-prj/user/svachhan/CMPF-Boiling-Code/software/amrex"
 
-cd /scratch/zt1/project/ariaz-prj/user/svachhan/Flash-X-Demo
+cd /scratch/zt1/project/ariaz-prj/user/svachhan/CMPF-Boiling-Code
 
 # This file is generated using configuration script
 SiteName="zaratan.umd.edu"
 Profile=False
 
-cd /scratch/zt1/project/ariaz-prj/user/svachhan/Flash-X-Demo
+cd /scratch/zt1/project/ariaz-prj/user/svachhan/CMPF-Boiling-Code
 
 # Bash file to load modules and set environment
 # variables for compilers and external libraries
@@ -57,7 +57,7 @@ echo "LD_LIBRARY_PATH=$LD_LIBRARY_PATH"
 echo "PATH=$PATH"
 echo "---------------------------------------------------------------------------------------"
 
-cd /scratch/zt1/project/ariaz-prj/user/svachhan/Flash-X-Demo/software/amrex
+cd /scratch/zt1/project/ariaz-prj/user/svachhan/CMPF-Boiling-Code/software/amrex
 
 # Bash script for `jobrunner` to install AMReX
 
@@ -73,10 +73,10 @@ else
 fi
 
 # configure and install amrex in 2D
-#make clean || true
-#./configure --dim=2 --prefix=$AMREX2D_HOME
-#make
-#make install
+make clean || true
+./configure --dim=2 --prefix=$AMREX2D_HOME
+make
+make install
 
 # configure and install amrex in 3D
 make clean || true

@@ -1,0 +1,2 @@
+> For 1D Spherical 6 species paramesh:
+./setup DeleptonizationWave -auto -1d +spherical +pm4dev -nxb=16 --with-unit=physics/Hydro/HydroMain/Spark/NonTelescoping +nolwf --with-unofficial=physics/Hydro/HydroMain/Spark/NonTelescoping nontelescoping=True +weaklib +thornado -maxblocks=64 +parallelIO nE=16 swE=1 nSpecies=6 nNodes=2 nMoments=4 momentClosure=MINERBO thornadoOrder=ORDER_V Bittree=True

@@ -1,0 +1,55 @@
+WEAKLIB_DIR ?= $(HOME)/weaklib
+include $(WEAKLIB_DIR)/Distributions/Build/Makefile_Build
+include $(WEAKLIB_DIR)/Distributions/Build/Makefile_WeakLib_ObjectFiles
+include $(WEAKLIB_DIR)/Distributions/Build/Makefile_WeakLib_Dependencies
+
+.DEFAULT_GOAL := all
+
+all: wlEosQueryTest wlEosPerformanceTest wlReadEquationOfStateTest wlRewriteEquationOfStateTest
+
+wlEosQueryTest: \
+	$(weaklib) wlEosQueryTest.o
+	$(FLINKER) $(FLAGS) -o wlEosQueryTest_$(MACHINE) \
+	$(weaklib) wlEosQueryTest.o \
+	$(LIBRARIES)
+
+wlEosPerformanceTest: \
+	$(weaklib) wlEosPerformanceTest.o
+	$(FLINKER) $(FLAGS) -o wlEosPerformanceTest_$(MACHINE) \
+	$(weaklib) wlEosPerformanceTest.o \
+	$(LIBRARIES)
+
+wlReadEquationOfStateTest: \
+	$(weaklib) wlReadEquationOfStateTest.o
+	$(FLINKER) $(FLAGS) -o wlReadEquationOfStateTest_$(MACHINE) \
+	$(weaklib) wlReadEquationOfStateTest.o \
+	$(LIBRARIES)
+
+wlRewriteEquationOfStateTest: \
+	$(Weaklib_External) wlRewriteEquationOfStateTest.o
+	$(FLINKER) $(FLAGS) -o wlRewriteEquationOfStateTest_$(MACHINE) \
+	$(Weaklib_External) wlRewriteEquationOfStateTest.o \
+	$(LIBRARIES)
+
+clean:
+	rm -f *.o *.mod *.ld
+
+clobber: clean
+	rm -f wlEosPerformanceTest_$(MACHINE)
+
+wlEosQueryTest.o: \
+  wlKindModule.o \
+  wlEquationOfStateTableModule.o \
+  wlIOModuleHDF.o \
+  wlEOSIOModuleHDF.o \
+  wlInterpolationModule.o \
+  wlEosQueryTest.F90
+
+wlEosPerformanceTest.o: \
+  wlKindModule.o \
+  wlEquationOfStateTableModule.o \
+  wlIOModuleHDF.o \
+  wlEOSIOModuleHDF.o \
+  wlInterpolationModule.o \
+  wlEOSInterpolationModule.o \
+  wlEosPerformanceTest.f90

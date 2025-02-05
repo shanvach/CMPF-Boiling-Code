@@ -1,0 +1,28 @@
+wlEquationOfStateTableModule.o: \
+  wlKindModule.o \
+  wlThermoStateModule.o \
+  wlDependentVariablesModule.o \
+  wlEquationOfStateTableModule.f90
+
+wlEOSInversionModule.o: \
+  wlKindModule.o \
+  wlInterpolationModule.o \
+  wlInterpolationUtilitiesModule.o \
+  wlEOSInversionModule.F90
+
+wlEOSInterpolationModule.o: \
+  wlKindModule.o \
+  wlInterpolationModule.o \
+  wlInterpolationUtilitiesModule.o \
+  wlThermoStateModule.o \
+  wlDependentVariablesModule.o \
+  wlEquationOfStateTableModule.o \
+  wlEOSInterpolationModule.f90
+
+wlEOSIOModuleHDF.o: \
+  wlKindModule.o \
+  wlThermoStateModule.o \
+  wlDependentVariablesModule.o \
+  wlEquationOfStateTableModule.o \
+  wlIOModuleHDF.o \
+  wlEOSIOModuleHDF.f90

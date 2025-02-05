@@ -1,0 +1,21 @@
+wlOpacityFieldsModule.o: \
+  wlKindModule.o \
+  wlOpacityFieldsModule.f90
+
+wlOpacityTableModule.o: \
+  wlKindModule.o \
+  wlGridModule.o \
+  wlOpacityFieldsModule.o \
+  wlIOModuleHDF.o \
+  wlEOSIOModuleHDF.o \
+  wlEquationOfStateTableModule.o \
+  wlOpacityTableModule.f90
+
+wlOpacityTableIOModuleHDF.o: \
+  wlKindModule.o \
+  wlGridModule.o \
+  wlOpacityTableModule.o \
+  wlOpacityFieldsModule.o \
+  wlEOSIOModuleHDF.o \
+  wlIOModuleHDF.o \
+  wlOpacityTableIOModuleHDF.f90

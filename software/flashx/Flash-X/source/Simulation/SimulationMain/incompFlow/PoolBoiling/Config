@@ -1,0 +1,7 @@
+#	Config file for the INS module.
+#       Note: This is a staggered finite difference mesh algorithm.
+
+REQUIRES physics/Multiphase/MultiphaseEvap
+REQUIRES physics/sourceTerms/Heater/HeaterMain
+
+DATAFILES *_hdf5_htr_*
